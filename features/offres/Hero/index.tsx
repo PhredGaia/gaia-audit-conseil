@@ -3,7 +3,7 @@ import Hero from '@shared/components/Hero';
 
 export default function OffresHero() {
 	return (
-		<Hero src="/hero-offres.png">
+		<Hero>
 			<>
 				<h1 className="hero__title">Nos offres</h1>
 				<p className="hero__description text-level-2">

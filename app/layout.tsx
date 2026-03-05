@@ -40,6 +40,8 @@ import '@shared/styles/index.scss';
 import Header from '@shared/components/Header';
 import PageTransition from '@shared/components/PageTransition';
 import Footer from '@shared/components/Footer';
+import CookieConsent from '@shared/components/CookieConsent';
+import ContactWidget from '@shared/components/ContactWidget';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
 	return (
@@ -50,6 +52,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 					<main>{children}</main>
 				</PageTransition>
 				<Footer />
+				<CookieConsent />
+				<ContactWidget />
 			</body>
 		</html>
 	);

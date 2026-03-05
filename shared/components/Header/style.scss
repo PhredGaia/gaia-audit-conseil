@@ -4,22 +4,33 @@
 	left: 0;
 	width: 100%;
 	z-index: 10000;
-	background: $white;
 	color: $white;
 	transition:
 		box-shadow 0.3s ease,
-		background 0.3s ease;
+		background 0.3s ease,
+		color 0.3s ease;
 	height: 80px;
 	display: flex;
 	align-items: center;
-	background: linear-gradient(
-		to right,
-		$black-primary,
-		#2D344F 80%,
-		#5C7DB9 90%,
-		#88C1ED
-	);
+	background: linear-gradient(to right, $black-primary, #2d344f);
 
+	&.scrolled {
+		background: $white;
+		color: $black-primary;
+		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+
+		.header__link {
+			color: $black-primary;
+
+			&:hover {
+				color: $accent-pink;
+			}
+		}
+
+		.header__active-indicator {
+			background-color: $accent-pink;
+		}
+	}
 
 	&::after {
 		content: '';
@@ -77,7 +88,7 @@
 		height: 60px;
 		display: flex;
 		align-items: center;
-		
+
 		ul {
 			display: flex;
 			gap: 40px;
@@ -99,9 +110,15 @@
 	&__active-indicator {
 		position: absolute;
 		bottom: 0;
-		height: 4px;
+		height: 2px;
 		background-color: $accent-green;
-		transition: left 0.3s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease, bottom 0.3s ease;
+		background-color: $accent-pink;
+		transition:
+			left 0.3s ease,
+			width 0.3s ease,
+			height 0.3s ease,
+			background-color 0.3s ease,
+			bottom 0.3s ease;
 		z-index: 1;
 	}
 
@@ -119,7 +136,9 @@
 		text-transform: none;
 		letter-spacing: 0;
 		text-decoration: none;
-		transition: background-color 0.3s ease, color 0.3s ease;
+		transition:
+			background-color 0.3s ease,
+			color 0.3s ease;
 
 		svg {
 			transition: transform 0.3s ease;
@@ -220,7 +239,9 @@
 			li {
 				opacity: 0;
 				transform: translateX(20px);
-				transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+				transition:
+					opacity 0.4s ease-out,
+					transform 0.4s ease-out;
 			}
 		}
 
@@ -285,14 +306,8 @@
 	}
 
 	@media (max-width: 768px) {
-
 		// background-color: $white;
-		background: linear-gradient(
-			to right,
-			$black-primary,
-			#2D344F 80%,
-		);
-		
+		background: linear-gradient(to right, $black-primary, #2d344f 80%);
 
 		.button-primary.desktop {
 			display: none;
@@ -300,7 +315,6 @@
 
 		.button-primary.mobile {
 			display: block;
-			
 		}
 
 		.container {
@@ -399,12 +413,9 @@
 			height: 65px;
 		}
 
-
-
 		&__mobile {
 			width: 280px;
 			max-width: 90vw;
-
 		}
 	}
 }

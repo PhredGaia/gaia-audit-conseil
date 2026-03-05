@@ -3,17 +3,17 @@
 		font-family: $font-family-primary;
 		font-size: $h1-size-desktop;
 		font-weight: $font-weight-medium;
-		color: $black-primary;
+		color: #ffff;
 		line-height: $line-height-tight;
 		margin: 0;
 	}
 
 	&__tagline {
-		color: $black-secondary;
+		color: rgba($white, 0.85);
 	}
 
 	&__description {
-		color: $black-secondary;
+		color: rgba($white, 0.65);
 	}
 
 	&__ui-container {
@@ -25,7 +25,6 @@
 
 	/* --- Desktop moyen (≤ 1280px) --- */
 	@media (max-width: $breakpoint-lg) {
-
 		&__title {
 			font-size: $h1-size-lg;
 		}
@@ -41,7 +40,6 @@
 		&__description {
 			max-width: 100%;
 		}
-
 	}
 
 	@media (max-width: 768px) {

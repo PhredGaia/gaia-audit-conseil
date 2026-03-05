@@ -1,13 +1,7 @@
 @import '@shared/styles/variables';
 
 .contact {
-	background: linear-gradient(
-		to right,
-		$black-primary,
-		#2D344F 80%,
-		#5C7DB9 90%,
-		#88C1ED
-	);
+	background: linear-gradient(to right, #1e1f22, #2D344F 80%);
 	padding: $spacing-5xl 0 0;
 
 	&-section {

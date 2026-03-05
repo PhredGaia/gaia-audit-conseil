@@ -1,25 +1,18 @@
 @import '@shared/styles/variables';
 
 .hero {
-	background-color: #F7F8F6;
-	&__text {
-		display: flex;
-		flex-direction: column;
-		gap: $spacing-xl;
-	}
-
 	&__title {
 		font-family: $font-family-primary;
 		font-size: $h1-size-desktop;
-		font-weight: $font-weight-bold;
+		font-weight: $font-weight-medium;
 		line-height: $line-height-tight;
 		letter-spacing: -0.02em;
-		color: $black-primary;
+		color: $white;
 		margin: 0;
 	}
 
 	&__description {
-		color: $black-secondary;
+		color: rgba($white, 0.65);
 		line-height: $line-height-relaxed;
 		margin: 0;
 	}

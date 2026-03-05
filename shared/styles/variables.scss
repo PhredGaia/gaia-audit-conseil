@@ -8,20 +8,31 @@ $black-primary: #1e1f22;
 $black-secondary: #4c4f55;
 $black-tertiary: #d6d6d6;
 
-$grey: #F3F6F8;
+$grey: #f3f6f8;
 
 $white: #ffffff;
-$white-secondary: #F6F6F6;
+$white-secondary: #f6f6f6;
 $white-tertiary: #f7f9f9;
 
-$accent-green: #76d8c6;
-$accent-blue: #88C1ED;
-$accent-blue-dark: #2E3551;
+//$accent-green: #76d8c6;
+$accent-green: #b137c8;
+$accent-green: #36c866;
+$accent-blue: #88c1ed;
+$accent-blue-dark: #2e3551;
 $accent-green-dark: #1f3f2f; // Nuance plus claire pour hover
 $accent-ocre: #b76b59;
-$accent-orange: #F4A261;
-$accent-pink: #FA6EAD;
-$accent-yellow: #FBD456;
+// $accent-orange: #f4a261;
+$accent-orange: #b137c8;
+$accent-orange: #36c866;
+//$accent-pink: #fa6ead;#da6efa
+$accent-pink: #da6efa;
+$accent-pink: #7cd09d;
+//$accent-yellow: #fbd456;
+$accent-yellow: #da6efa;
+$accent-yellow: #7cd09d;
+
+$pink-tertiary: #e7dfff;
+$green-tertiary: #fff;
 /* --- États et variations --- */
 $success: $accent-green;
 $error: #d54c4c;
@@ -32,7 +43,9 @@ $gradient-green: linear-gradient(135deg, #254312, #3d7a5a);
 $gradient-ocre: linear-gradient(135deg, #b76b59, #8d4f43);
 
 /* --- Ombres & bordures --- */
-$shadow-soft: 0 2px 6px -1px rgb(0 0 0 / 6%), 0 1px 3px -2px rgb(0 0 0 / 6%);
+$shadow-soft:
+	0 2px 6px -1px rgb(0 0 0 / 6%),
+	0 1px 3px -2px rgb(0 0 0 / 6%);
 $shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.08);
 $shadow-strong: 0 8px 30px rgba(0, 0, 0, 0.25);
 $shadow-floating-card: 0 4px 16px rgba(0, 0, 0, 0.08); // Ombre portée pour encadrés flottants
@@ -41,47 +54,47 @@ $shadow-floating-card: 0 4px 16px rgba(0, 0, 0, 0.08); // Ombre portée pour enc
    📱 Design System - Breakpoints
    ========================= */
 
-$breakpoint-xs: 480px;        // Petit mobile
-$breakpoint-sm: 768px;        // Mobile / Tablette portrait
-$breakpoint-md: 1024px;       // Tablette paysage
-$breakpoint-lg: 1280px;       // Desktop moyen
-$breakpoint-xl: 1600px;       // Desktop large
+$breakpoint-xs: 480px; // Petit mobile
+$breakpoint-sm: 768px; // Mobile / Tablette portrait
+$breakpoint-md: 1024px; // Tablette paysage
+$breakpoint-lg: 1280px; // Desktop moyen
+$breakpoint-xl: 1600px; // Desktop large
 
 /* =========================
    📏 Design System - Spacing
    ========================= */
 
 /* --- Espacements de base (scale 8px) --- */
-$spacing-xs: 4px;    // 0.5x
-$spacing-sm: 8px;    // 1x
-$spacing-md: 16px;   // 2x
-$spacing-lg: 24px;   // 3x
-$spacing-xl: 32px;   // 4x
-$spacing-2xl: 40px;  // 5x
-$spacing-3xl: 48px;  // 6x
-$spacing-4xl: 64px;  // 8x
-$spacing-5xl: 80px;  // 10x
+$spacing-xs: 4px; // 0.5x
+$spacing-sm: 8px; // 1x
+$spacing-md: 16px; // 2x
+$spacing-lg: 24px; // 3x
+$spacing-xl: 32px; // 4x
+$spacing-2xl: 40px; // 5x
+$spacing-3xl: 48px; // 6x
+$spacing-4xl: 64px; // 8x
+$spacing-5xl: 80px; // 10x
 
 /* --- Padding sections (vertical) --- */
-$section-padding-y-desktop: $spacing-4xl;      // 80px
-$section-padding-y-tablet: $spacing-3xl;      // 64px
-$section-padding-y-mobile: $spacing-2xl;       // 48px
+$section-padding-y-desktop: $spacing-4xl; // 80px
+$section-padding-y-tablet: $spacing-3xl; // 64px
+$section-padding-y-mobile: $spacing-2xl; // 48px
 
 /* --- Espacements internes (entre éléments dans un container) --- */
-$content-gap-sm: $spacing-sm;   // 8px - entre éléments proches
-$content-gap-md: $spacing-md;   // 16px - entre éléments standards
-$content-gap-lg: $spacing-lg;   // 24px - entre groupes d'éléments
-$content-gap-xl: $spacing-xl;   // 32px - entre sections internes
+$content-gap-sm: $spacing-sm; // 8px - entre éléments proches
+$content-gap-md: $spacing-md; // 16px - entre éléments standards
+$content-gap-lg: $spacing-lg; // 24px - entre groupes d'éléments
+$content-gap-xl: $spacing-xl; // 32px - entre sections internes
 
 /* --- Marges de titres --- */
-$title-margin-bottom-desktop: $spacing-xl;        // 32px
-$title-margin-bottom-tablet: $spacing-lg;         // 24px
-$title-margin-bottom-mobile: $spacing-md;         // 16px
+$title-margin-bottom-desktop: $spacing-xl; // 32px
+$title-margin-bottom-tablet: $spacing-lg; // 24px
+$title-margin-bottom-mobile: $spacing-md; // 16px
 
 /* --- Padding container interne --- */
-$container-padding-y-desktop: $spacing-2xl;      // 40px
-$container-padding-y-tablet: $spacing-xl;       // 32px
-$container-padding-y-mobile: $spacing-lg;        // 24px
+$container-padding-y-desktop: $spacing-2xl; // 40px
+$container-padding-y-tablet: $spacing-xl; // 32px
+$container-padding-y-mobile: $spacing-lg; // 24px
 
 /* =========================
    📐 Design System - Container Max Widths
@@ -92,10 +105,10 @@ $container-max-width-tablet: 100%;
 $container-max-width-mobile: 100%;
 
 /* --- Padding horizontal container --- */
-$container-padding-x-desktop: $spacing-4xl;      // 60px
-$container-padding-x-tablet: $spacing-2xl;      // 40px
-$container-padding-x-mobile: $spacing-xl;       // 32px
-$container-padding-x-xs: $spacing-md;            // 16px
+$container-padding-x-desktop: $spacing-4xl; // 60px
+$container-padding-x-tablet: $spacing-2xl; // 40px
+$container-padding-x-mobile: $spacing-xl; // 32px
+$container-padding-x-xs: $spacing-md; // 16px
 
 /* =========================
    📝 Design System - Typography
@@ -117,37 +130,37 @@ $line-height-relaxed: 1.6;
 $line-height-loose: 1.7;
 
 /* --- Desktop Typography (> 1280px) --- */
-$h1-size-desktop: clamp(32px, 3.5vw, 40px);  // 32-40px
-$h2-size-desktop: clamp(20px, 2.5vw, 28px);  // 20-28px
-$h3-size-desktop: clamp(18px, 2vw, 22px);    // 18-22px
+$h1-size-desktop: clamp(32px, 3.5vw, 40px); // 32-40px
+$h2-size-desktop: clamp(20px, 2.5vw, 28px); // 20-28px
+$h3-size-desktop: clamp(18px, 2vw, 22px); // 18-22px
 $body-size-desktop: 16px;
 $small-size-desktop: 14px;
 
 /* --- Desktop moyen Typography (≤ 1280px) --- */
-$h1-size-lg: clamp(30px, 3vw, 36px);         // 30-36px
-$h2-size-lg: clamp(20px, 2.3vw, 26px);       // 20-26px
-$h3-size-lg: clamp(17px, 1.8vw, 20px);      // 17-20px
+$h1-size-lg: clamp(30px, 3vw, 36px); // 30-36px
+$h2-size-lg: clamp(20px, 2.3vw, 26px); // 20-26px
+$h3-size-lg: clamp(17px, 1.8vw, 20px); // 17-20px
 $body-size-lg: 15px;
 $small-size-lg: 13px;
 
 /* --- Tablette Typography (≤ 1024px) --- */
-$h1-size-md: clamp(30px, 4vw, 32px);         // 28-32px
-$h2-size-md: clamp(20px, 2.5vw, 24px);       // 20-24px
-$h3-size-md: clamp(16px, 2vw, 18px);         // 16-18px
+$h1-size-md: clamp(30px, 4vw, 32px); // 28-32px
+$h2-size-md: clamp(20px, 2.5vw, 24px); // 20-24px
+$h3-size-md: clamp(16px, 2vw, 18px); // 16-18px
 $body-size-md: 15px;
 $small-size-md: 13px;
 
 /* --- Mobile Typography (≤ 768px) --- */
-$h1-size-sm: clamp(30px, 4.5vw, 30px);       // 24-30px
-$h2-size-sm: clamp(20px, 3vw, 22px);         // 20-22px
-$h3-size-sm: clamp(15px, 2.5vw, 17px);       // 15-17px
+$h1-size-sm: clamp(30px, 4.5vw, 30px); // 24-30px
+$h2-size-sm: clamp(20px, 3vw, 22px); // 20-22px
+$h3-size-sm: clamp(15px, 2.5vw, 17px); // 15-17px
 $body-size-sm: 15px;
 $small-size-sm: 13px;
 
 /* --- Petit Mobile Typography (≤ 480px) --- */
-$h1-size-xs: clamp(30px, 5vw, 28px);         // 22-28px
-$h2-size-xs: clamp(20px, 3.5vw, 20px);       // 20px fixe
-$h3-size-xs: clamp(14px, 3vw, 16px);         // 14-16px
+$h1-size-xs: clamp(30px, 5vw, 28px); // 22-28px
+$h2-size-xs: clamp(20px, 3.5vw, 20px); // 20px fixe
+$h3-size-xs: clamp(14px, 3vw, 16px); // 14-16px
 $body-size-xs: 14px;
 $small-size-xs: 12px;
 
@@ -161,4 +174,4 @@ $text-size-level-2-mobile: 15px;
 $text-size-level-3-mobile: 13px;
 
 $border-card: 1px solid rgba(60, 110, 60, 0.08);
-$border: 1px solid rgba(60, 110, 60, 0.15)
+$border: 1px solid rgba(60, 110, 60, 0.15);

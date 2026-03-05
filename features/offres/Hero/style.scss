@@ -3,13 +3,13 @@
 		font-family: $font-family-primary;
 		font-size: $h1-size-desktop;
 		font-weight: $font-weight-medium;
-		color: $black-primary;
+		color: $white;
 		line-height: $line-height-tight;
 		margin: 0;
 	}
 
 	&__description {
-		color: $black-secondary;
+		color: rgba($white, 0.65);
 	}
 
 	/* --- Desktop moyen (≤ 1280px) --- */

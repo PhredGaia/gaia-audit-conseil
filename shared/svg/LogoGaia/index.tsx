@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 
 interface LogoGaiaProps {
 	className?: string;
@@ -14,25 +13,24 @@ export default function LogoGaia({
 }: LogoGaiaProps) {
 	return (
 		<svg
-		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 168 40"
-		role="img"
-		aria-label="GAIA"
-		width={width}
-		height={height}
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 168 40"
+			role="img"
+			aria-label="GAIA"
+			width={width}
+			height={height}
 		>
 			<text
 				x="0"
 				y="32"
-				fill="#FBD456"
-				font-family="Inter, Helvetica Neue, Arial, sans-serif"
-				font-size="32"
-				font-weight="400"
-				letter-spacing="0.35em"
+				fill="currentColor"
+				fontFamily="Inter, Helvetica Neue, Arial, sans-serif"
+				fontSize="32"
+				fontWeight="400"
+				letterSpacing="0.35em"
 			>
 				GAIA
 			</text>
 		</svg>
-
 	);
 }

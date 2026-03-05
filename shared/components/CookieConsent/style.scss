@@ -1,0 +1,158 @@
+@import '@shared/styles/variables';
+
+.cookie-consent {
+	&__pill {
+		position: fixed;
+		bottom: 24px;
+		left: 24px;
+		z-index: 9999;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background: $accent-green;
+		border: none;
+		cursor: pointer;
+		color: $white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0 4px 16px rgba(54, 200, 102, 0.35);
+		transition:
+			transform 0.2s ease,
+			box-shadow 0.2s ease,
+			background 0.2s ease;
+
+		svg {
+			width: 26px;
+			height: 26px;
+		}
+
+		&:hover {
+			transform: scale(1.08);
+			box-shadow: 0 6px 20px rgba(54, 200, 102, 0.45);
+		}
+
+		&.open {
+			background: $black-secondary;
+			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	&__banner {
+		position: fixed;
+		bottom: 100px;
+		left: 24px;
+		z-index: 9998;
+		width: 320px;
+		background: $white;
+		border: 1px solid rgba($black-primary, 0.1);
+		border-radius: 12px;
+		box-shadow: $shadow-strong;
+		animation: cookieSlideIn 0.2s ease;
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: $spacing-md $spacing-xl $spacing-sm;
+		border-bottom: 1px solid rgba($black-primary, 0.08);
+	}
+
+	&__title {
+		font-size: 13px;
+		font-weight: 600;
+		color: rgba($black-primary, 0.5);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	&__close {
+		width: 28px;
+		height: 28px;
+		border: none;
+		background: none;
+		cursor: pointer;
+		color: rgba($black-primary, 0.4);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 4px;
+		transition:
+			color 0.2s ease,
+			background 0.2s ease;
+
+		&:hover {
+			color: rgba($black-primary, 0.8);
+			background: rgba($black-primary, 0.06);
+		}
+	}
+
+	&__content {
+		padding: $spacing-lg $spacing-xl $spacing-xl;
+		display: flex;
+		flex-direction: column;
+		gap: $spacing-lg;
+	}
+
+	&__text {
+		color: rgba($black-primary, 0.75);
+		font-size: 13px;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	&__actions {
+		display: flex;
+		gap: $spacing-sm;
+	}
+
+	&__btn {
+		flex: 1;
+		padding: 8px 16px;
+		border-radius: 6px;
+		font-size: 13px;
+		font-weight: 500;
+		cursor: pointer;
+		border: none;
+		transition: opacity 0.2s ease;
+
+		&:hover {
+			opacity: 0.85;
+		}
+
+		&--refuse {
+			background: rgba($black-primary, 0.08);
+			color: rgba($black-primary, 0.6);
+		}
+
+		&--accept {
+			background: $accent-green;
+			color: $white;
+		}
+	}
+}
+
+@keyframes cookieSlideIn {
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (max-width: 480px) {
+	.cookie-consent__banner {
+		left: 12px;
+		right: 12px;
+		width: auto;
+	}
+
+	.cookie-consent__pill {
+		bottom: 16px;
+		left: 16px;
+	}
+}

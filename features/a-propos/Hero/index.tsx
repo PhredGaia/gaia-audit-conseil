@@ -3,14 +3,14 @@ import Hero from '@shared/components/Hero';
 
 export default function AProposHero() {
 	return (
-		<Hero src="/hero-a-propos.png">
-			<div className="hero__text">
+		<Hero>
+			<>
 				<h1 className="hero__title">GAIA – Audit · Conseil · Formation</h1>
 				<p className="hero__description text-level-2">
-					GAIA accompagne les organisations dans la construction et l’évolution de systèmes de management utiles, compris et réellement appliqués.<br/>
-					Notre objectif n’est pas de produire des dispositifs théoriques, mais de soutenir les pratiques existantes et les enjeux concrets des organisations, dans une logique d’amélioration continue.
+					GAIA accompagne les organisations dans la construction et l'évolution de systèmes de management utiles, compris et réellement appliqués.<br/>
+					Notre objectif n'est pas de produire des dispositifs théoriques, mais de soutenir les pratiques existantes et les enjeux concrets des organisations, dans une logique d'amélioration continue.
 				</p>
-			</div>
+			</>
 		</Hero>
 	);
 }

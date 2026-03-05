@@ -3,7 +3,7 @@ import Hero from '@shared/components/Hero';
 
 export default function FormationsHero() {
 	return (
-		<Hero src="/hero-formation.png">
+		<Hero>
 			<>
 				<h1 className="hero__title">Formations professionnelles</h1>
 				<p className="hero__description text-level-2">

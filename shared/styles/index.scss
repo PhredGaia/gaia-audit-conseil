@@ -10,13 +10,7 @@ html,
 body {
 	overflow-x: hidden;
 	min-height: 100%;
-	background: linear-gradient(
-		to right,
-		$black-primary,
-		#2D344F 80%,
-		#5C7DB9 90%,
-		#88C1ED
-	);
+	background: linear-gradient(to right, #1e1f22, #2d344f 80%);
 }
 
 *,
@@ -47,13 +41,13 @@ body {
 		height: 60px;
 		background-color: $white;
 	}
-  
+
 	> * {
-	  pointer-events: auto;
+		pointer-events: auto;
 	}
-  
+
 	@media (max-width: $breakpoint-sm) {
-	  padding-top: 60px;
+		padding-top: 60px;
 	}
 }
 
@@ -204,10 +198,12 @@ a {
 	font-weight: $font-weight-regular;
 	text-align: center;
 	transition: all 0.3s ease;
-	line-height:29px;
+	line-height: 29px;
 	font-size: $small-size-desktop;
+	transition: all 0.4s;
 	&:hover {
 		background-color: $accent-yellow;
+		background-color: $accent-pink;
 		box-shadow: $shadow-strong;
 		color: $black-primary;
 	}
@@ -235,9 +231,11 @@ a {
 	border-radius: 10px;
 	font-weight: $font-weight-regular;
 	text-align: center;
-	transition: background-color 0.3s ease, color 0.3s ease;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
 	font-size: $small-size-desktop;
-	line-height:29px;
+	line-height: 29px;
 
 	&:hover {
 		color: $accent-pink;

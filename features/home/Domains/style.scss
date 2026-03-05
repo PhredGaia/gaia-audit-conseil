@@ -14,7 +14,7 @@
 		text-align: left;
 		position: relative;
 		padding-bottom: $spacing-md;
-		
+
 		// Trait vert sous le titre
 		&::after {
 			content: '';
@@ -31,7 +31,8 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		background: $white;
+		//background: $white;
+		background-color: $green-tertiary;
 		padding: $spacing-2xl;
 		border-radius: 20px;
 		border: $border-card;

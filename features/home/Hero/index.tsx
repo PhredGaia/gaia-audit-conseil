@@ -10,7 +10,7 @@ export default function() {
 	const buttonContactLabel = "Parlons de votre projet";
 
 	return (
-		<Hero src="/hero-home.png">
+		<Hero>
 			<>
 				<h1 className="hero__title">{title}</h1>
 				<p className="hero__tagline text-level-1">{tagline}</p>

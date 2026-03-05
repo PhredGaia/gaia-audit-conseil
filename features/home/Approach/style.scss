@@ -14,7 +14,7 @@
 		text-align: left;
 		position: relative;
 		padding-bottom: $spacing-md;
-		
+
 		// Trait vert sous le titre
 		&::after {
 			content: '';
@@ -55,7 +55,6 @@
 
 	/* --- Mobile (≤ 768px) --- */
 	@media (max-width: $breakpoint-sm) {
-		
 		&__title {
 			font-size: $h2-size-sm;
 		}
@@ -101,8 +100,7 @@
 		}
 	}
 
-
-	&__icon { 
+	&__icon {
 		width: 40px;
 		height: 40px;
 		background: $accent-green;
@@ -129,13 +127,13 @@
 		margin-bottom: $spacing-xs; // 4px
 	}
 
-	&__divider {
-		width: 40px;
-		height: 2px;
-		background: $accent-pink;
-		margin: $spacing-xs 0; // 4px
-		border-radius: 1px;
-	}
+	// &__divider {
+	// 	width: 40px;
+	// 	height: 2px;
+	// 	background: $accent-pink;
+	// 	margin: $spacing-xs 0; // 4px
+	// 	border-radius: 1px;
+	// }
 
 	&__description {
 		font-family: var(--font-inter), sans-serif;
@@ -165,7 +163,6 @@
 				width: 32px;
 				height: 32px;
 			}
-			
 		}
 	}
 }

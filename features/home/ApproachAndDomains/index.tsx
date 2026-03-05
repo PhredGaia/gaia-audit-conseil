@@ -1,5 +1,6 @@
 import Approach from '../Approach';
 import Domains from '../Domains';
+import Image from 'next/image';
 import './style.scss';
 
 export default function ApproachAndDomains() {
