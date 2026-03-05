@@ -24,6 +24,8 @@ export default function StructuredData({
 					sameAs: [],
 					contactPoint: {
 						'@type': 'ContactPoint',
+						telephone: '+33-6-70-89-36-40',
+						email: 'contact@gaia-audit-conseil.fr',
 						contactType: 'Customer Service',
 						areaServed: 'FR',
 						availableLanguage: 'French'
@@ -36,15 +38,7 @@ export default function StructuredData({
 					'@type': 'WebSite',
 					name: siteConfig.name,
 					url: baseUrl,
-					description: siteConfig.description,
-					potentialAction: {
-						'@type': 'SearchAction',
-						target: {
-							'@type': 'EntryPoint',
-							urlTemplate: `${baseUrl}/recherche?q={search_term_string}`
-						},
-						'query-input': 'required name=search_term_string'
-					}
+					description: siteConfig.description
 				};
 
 			case 'WebPage':
