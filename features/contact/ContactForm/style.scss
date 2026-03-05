@@ -89,8 +89,8 @@
 
 	&__success {
 		padding: $spacing-3xl;
-		background: #eef4ea;
-		border: 1px solid rgba(60, 110, 60, 0.15);
+		background: rgba($accent-green, 0.12);
+		border: 1px solid rgba($accent-green, 0.4);
 		border-radius: 8px;
 		max-width: 640px;
 	}
