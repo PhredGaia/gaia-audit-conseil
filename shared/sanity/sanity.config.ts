@@ -8,7 +8,7 @@ import formations from '../../features/formations/formations.schema';
 export default defineConfig({
 	name: 'default',
 	title: 'GAIA Studio',
-	projectId: 'qjikpaof',
+	projectId: 'jtlf060d',
 	dataset: 'production',
 	plugins: [deskTool()],
 	schema: {
