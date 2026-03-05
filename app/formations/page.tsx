@@ -24,14 +24,16 @@ export async function generateMetadata(): Promise<Metadata> {
 	if (!data?.seo) {
 		return generatePageMetadata({
 			title: 'Formations - GAIA',
-			description: 'Découvrez nos formations professionnelles en systèmes de management, audit interne, ISO, RSE et EPV.'
+			description: 'Découvrez nos formations professionnelles en systèmes de management, audit interne, ISO, RSE et EPV.',
+			path: '/formations'
 		});
 	}
 
 	return generatePageMetadata({
 		title: data.seo.metaTitle || 'Formations - GAIA',
 		description: data.seo.metaDescription || 'Découvrez nos formations professionnelles en systèmes de management, audit interne, ISO, RSE et EPV.',
-		openGraphImage: data.seo.openGraphImage
+		path: '/formations',
+		image: data.seo.openGraphImage
 	});
 }
 
@@ -45,7 +47,8 @@ export default async function FormationsPage() {
 					type="WebPage"
 					data={{
 						name: data.seo.metaTitle || 'Formations - GAIA',
-						description: data.seo.metaDescription
+						description: data.seo.metaDescription,
+						url: '/formations'
 					}}
 				/>
 			)}

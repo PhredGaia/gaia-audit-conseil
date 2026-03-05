@@ -14,21 +14,39 @@
 	align-items: center;
 	background: linear-gradient(to right, $black-primary, #2d344f);
 
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image:
+			linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+		background-size: 40px 40px;
+		mask-image: linear-gradient(to bottom right, transparent 10%, rgba(0, 0, 0, 0.55) 90%);
+		pointer-events: none;
+		z-index: 0;
+		transition: opacity 0.3s ease;
+	}
+
 	&.scrolled {
 		background: $white;
 		color: $black-primary;
 		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 
+		&::before {
+			opacity: 0;
+		}
+
 		.header__link {
 			color: $black-primary;
 
 			&:hover {
-				color: $accent-green-soft;
+				color: $accent-green;
 			}
 		}
 
 		.header__active-indicator {
-			background-color: $accent-green-soft;
+			background-color: $accent-green;
 		}
 	}
 
@@ -57,6 +75,7 @@
 		justify-content: space-between;
 		height: 100%;
 		gap: $spacing-lg;
+		z-index: 1;
 		position: relative;
 	}
 
@@ -109,10 +128,9 @@
 
 	&__active-indicator {
 		position: absolute;
-		bottom: 0;
+		bottom: 10px;
 		height: 2px;
 		background-color: $accent-green;
-		background-color: $accent-green-soft;
 		transition:
 			left 0.3s ease,
 			width 0.3s ease,
@@ -166,7 +184,7 @@
 		transition: color 0.3s ease;
 
 		&:hover {
-			color: $accent-green-soft;
+			color: $accent-green;
 		}
 
 		&.active {
@@ -354,7 +372,7 @@
 			}
 
 			&.open {
-				background-color: $accent-green;
+				background-color: $navy;
 
 				span:nth-child(1) {
 					background-color: $white;
@@ -402,7 +420,7 @@
 
 			&.active {
 				background-color: $white-secondary;
-				border-left-color: $accent-green-soft;
+				border-left-color: $accent-green;
 				color: $black-primary;
 			}
 		}

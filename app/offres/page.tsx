@@ -31,14 +31,16 @@ export async function generateMetadata(): Promise<Metadata> {
 	if (!data?.seo) {
 		return generatePageMetadata({
 			title: 'Offres - GAIA',
-			description: 'Découvrez nos offres d\'audit, conseil, accompagnement et formation en systèmes de management.'
+			description: 'Découvrez nos offres d\'audit, conseil, accompagnement et formation en systèmes de management.',
+			path: '/offres'
 		});
 	}
 
 	return generatePageMetadata({
 		title: data.seo.metaTitle || 'Offres - GAIA',
 		description: data.seo.metaDescription || 'Découvrez nos offres d\'audit, conseil, accompagnement et formation en systèmes de management.',
-		openGraphImage: data.seo.openGraphImage
+		path: '/offres',
+		image: data.seo.openGraphImage
 	});
 }
 
@@ -52,7 +54,8 @@ export default async function OffresPage() {
 					type="WebPage"
 					data={{
 						name: data.seo.metaTitle || 'Offres - GAIA',
-						description: data.seo.metaDescription
+						description: data.seo.metaDescription,
+						url: '/offres'
 					}}
 				/>
 			)}

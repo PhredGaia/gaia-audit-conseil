@@ -33,7 +33,7 @@
 		}
 
 		&.open {
-			background: $black-secondary;
+			background: $navy;
 			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 		}
 	}
@@ -71,10 +71,10 @@
 
 		&:hover {
 			background: $grey;
-			color: $accent-green-soft;
+			color: $accent-green;
 
 			svg {
-				color: $accent-green-soft;
+				color: $accent-green;
 			}
 		}
 

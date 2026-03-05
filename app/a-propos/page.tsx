@@ -17,7 +17,8 @@ export default function AProposPage() {
 				type="WebPage"
 				data={{
 					name: 'À propos - GAIA',
-					description: 'Découvrez GAIA : une double posture d\'auditeur et d\'accompagnant pour construire des systèmes de management pragmatiques, adaptés et compris par les équipes.'
+					description: 'Découvrez GAIA : une double posture d\'auditeur et d\'accompagnant pour construire des systèmes de management pragmatiques, adaptés et compris par les équipes.',
+					url: '/a-propos'
 				}}
 			/>
 			<About />

@@ -22,6 +22,13 @@ export default function StructuredData({
 					logo: `${baseUrl}/logo.png`,
 					description: siteConfig.description,
 					sameAs: [],
+					address: {
+						'@type': 'PostalAddress',
+						streetAddress: '15 Route de Bois Blanc',
+						addressLocality: 'Touvre',
+						postalCode: '16600',
+						addressCountry: 'FR'
+					},
 					contactPoint: {
 						'@type': 'ContactPoint',
 						telephone: '+33-6-70-89-36-40',

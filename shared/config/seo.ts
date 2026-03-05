@@ -181,7 +181,7 @@ export function generatePageMetadata({
 	const ogImage = image || siteConfig.ogImage;
 
 	return {
-		title: fullTitle,
+		title: { absolute: fullTitle },
 		description,
 		alternates: {
 			canonical: url

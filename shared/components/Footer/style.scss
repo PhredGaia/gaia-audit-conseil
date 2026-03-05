@@ -3,6 +3,29 @@
 	color: $white;
 	padding: 60px 0 30px;
 	font-family: var(--font-inter), sans-serif;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image:
+			linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+			linear-gradient(
+				90deg,
+				rgba(255, 255, 255, 0.07) 1px,
+				transparent 1px
+			);
+		background-size: 40px 40px;
+		mask-image: linear-gradient(
+			to bottom right,
+			transparent 10%,
+			rgba(0, 0, 0, 0.55) 90%
+		);
+		pointer-events: none;
+		z-index: 0;
+	}
 
 	.container {
 		max-width: 1600px;
@@ -38,6 +61,7 @@
 	a {
 		text-decoration: none;
 		transition: color 0.3s ease;
+		padding-left: 0;
 
 		&:hover {
 			color: $accent-green;
@@ -54,7 +78,6 @@
 	}
 
 	&__bottom {
-		border-top: 1px solid rgba(255, 255, 255, 0.1);
 		padding-top: 20px;
 		text-align: center;
 

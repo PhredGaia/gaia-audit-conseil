@@ -16,6 +16,17 @@ export default function ApproachAndDomains() {
 					</div>
 				</div>
 			</div>
+			<div className="approach-domains__image-wrapper">
+				<Image
+					src={'/bonhomme-note.png'}
+					alt="GAIA - Audit Conseil Formation"
+					fill
+					priority={true}
+					sizes="(max-width: 768px) 100vw, 50vw"
+					quality={85}
+					className="approach-domains__image"
+				/>
+			</div>
 		</section>
 	);
 }

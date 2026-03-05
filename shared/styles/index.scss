@@ -202,9 +202,9 @@ a {
 	font-size: $small-size-desktop;
 	transition: all 0.4s;
 	&:hover {
-		background-color: $accent-green-soft;
+		background-color: $accent-green-dark;
 		box-shadow: $shadow-strong;
-		color: $black-primary;
+		color: $white;
 	}
 	border-radius: 10px;
 	box-shadow: $shadow-soft;
@@ -237,7 +237,7 @@ a {
 	line-height: 29px;
 
 	&:hover {
-		color: $accent-green-soft;
+		color: $accent-green;
 	}
 }
 

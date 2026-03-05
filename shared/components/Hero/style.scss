@@ -5,6 +5,27 @@
 	overflow: hidden;
 	background: linear-gradient(to right, $black-primary, #2d344f);
 
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image:
+			linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+			linear-gradient(
+				90deg,
+				rgba(255, 255, 255, 0.07) 1px,
+				transparent 1px
+			);
+		background-size: 40px 40px;
+		mask-image: linear-gradient(
+			to bottom right,
+			transparent 10%,
+			rgba(0, 0, 0, 0.55) 90%
+		);
+		pointer-events: none;
+		z-index: 0;
+	}
+
 	&__content {
 		padding: $spacing-5xl 0;
 		background: transparent;
@@ -32,23 +53,15 @@
 		}
 	}
 
-	&__image-column {
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 50%;
-		height: auto;
-	}
-
 	&__image-wrapper {
-		position: relative !important;
+		position: absolute !important;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		top: 0;
-		right: 0;
-		width: 100%;
+		bottom: 0;
+		right: 80px;
+		width: 20%;
+		min-width: 200px;
 		height: auto;
 		overflow: hidden;
 	}
@@ -57,6 +70,7 @@
 		position: relative !important;
 		display: block;
 		height: auto !important;
+		transform: scaleX(-1);
 		margin: 0 auto;
 	}
 
@@ -118,10 +132,13 @@
 
 		&__image-wrapper {
 			width: 100%;
+			right: 90px;
 		}
 
 		&__image {
 			width: 100% !important;
+
+			transform: scaleX(1);
 		}
 	}
 }

@@ -19,22 +19,19 @@ export default function Hero({ src, children }: HeroProps) {
 					>
 						{children}
 					</div>
-					{/* {src && (
-						<div className="hero__image-column">
-							<div className="hero__image-wrapper">
-								<Image
-									src={src}
-									alt="GAIA - Audit Conseil Formation"
-									fill
-									priority={true}
-									sizes="(max-width: 768px) 100vw, 50vw"
-									quality={85}
-									className="hero__image"
-								/>
-							</div>
-						</div>
-					)} */}
 				</div>
+			</div>
+
+			<div className="hero__image-wrapper">
+				<Image
+					src={'/bonhomme-hero.png'}
+					alt="GAIA - Audit Conseil Formation"
+					fill
+					priority={true}
+					sizes="(max-width: 768px) 100vw, 50vw"
+					quality={85}
+					className="hero__image"
+				/>
 			</div>
 		</div>
 	);
