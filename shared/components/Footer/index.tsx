@@ -41,7 +41,6 @@ export default function Footer() {
 							<li>📧 contact@gaia-audit-conseil.fr</li>
 							<li>📞 06 70 89 36 40</li>
 						</ul>
-						<Link href="/contact">Contactez-nous</Link>
 					</div>
 				</div>
 
