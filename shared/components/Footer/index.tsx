@@ -13,8 +13,10 @@ export default function Footer() {
 					<div className={`${CLASS_NAME}__col`}>
 						<h3>GAIA</h3>
 						<p>
-							Audit · Conseil · Formation<br />
-							Systèmes de management adaptés à vos réalités opérationnelles.
+							Audit · Conseil · Formation
+							<br />
+							Systèmes de management adaptés à vos réalités
+							opérationnelles.
 						</p>
 					</div>
 
@@ -36,8 +38,8 @@ export default function Footer() {
 					<div className={`${CLASS_NAME}__col`}>
 						<h4>Contact</h4>
 						<ul>
-							<li>📧 contact@gaia.fr</li>
-							<li>📞 01 23 45 67 89</li>
+							<li>📧 contact@gaia-audit-conseil.fr</li>
+							<li>📞 06 70 89 36 40</li>
 						</ul>
 						<Link href="/contact">Contactez-nous</Link>
 					</div>
@@ -46,7 +48,8 @@ export default function Footer() {
 				<div className={`${CLASS_NAME}__bottom`}>
 					<p>© 2026 GAIA. Tous droits réservés.</p>
 					<p className="footer__credit">
-						Site conçu et développé par Studio Web 15.
+						Site conçu et développé par{' '}
+						<a href="https://www.studioweb15.fr/">Studio Web 15.</a>
 					</p>
 				</div>
 			</div>

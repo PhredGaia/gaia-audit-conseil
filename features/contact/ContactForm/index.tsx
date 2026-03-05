@@ -25,6 +25,8 @@ export default function ContactForm({ defaultRequestType }: ContactFormProps) {
 	const [message, setMessage] = useState('');
 	const [errors, setErrors] = useState<Record<string, string>>({});
 	const [submitted, setSubmitted] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
+	const [serverError, setServerError] = useState<string | null>(null);
 
 	const validate = useCallback(() => {
 		const next: Record<string, string> = {};
@@ -37,11 +39,28 @@ export default function ContactForm({ defaultRequestType }: ContactFormProps) {
 		return Object.keys(next).length === 0;
 	}, [prenom, nom, email, message]);
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 		if (!validate()) return;
-		// Pas d'envoi backend pour l'instant : formulaire non contributif
-		setSubmitted(true);
+		setIsLoading(true);
+		setServerError(null);
+		try {
+			const res = await fetch('/api/contact', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ objet, prenom, nom, email, telephone, societe, message }),
+			});
+			if (!res.ok) {
+				const data = await res.json();
+				setServerError(data.error ?? 'Une erreur est survenue, veuillez réessayer.');
+			} else {
+				setSubmitted(true);
+			}
+		} catch {
+			setServerError('Une erreur est survenue, veuillez réessayer.');
+		} finally {
+			setIsLoading(false);
+		}
 	};
 
 	if (submitted) {
@@ -189,8 +208,13 @@ export default function ContactForm({ defaultRequestType }: ContactFormProps) {
 				)}
 			</div>
 
-			<button type="submit" className="button-primary contact-form__submit">
-				Envoyer
+			{serverError && (
+				<p className="contact-form__error" role="alert">
+					{serverError}
+				</p>
+			)}
+			<button type="submit" className="button-primary contact-form__submit" disabled={isLoading}>
+				{isLoading ? 'Envoi en cours...' : 'Envoyer'}
 			</button>
 		</form>
 	);
