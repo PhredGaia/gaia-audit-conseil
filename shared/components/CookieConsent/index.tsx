@@ -65,6 +65,7 @@ export default function CookieConsent() {
 						<path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 					</svg>
 				)}
+				<span className="cookie-consent__pill-label">Confidentialité</span>
 			</button>
 		</>
 	);

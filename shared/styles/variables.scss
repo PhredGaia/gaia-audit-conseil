@@ -3,7 +3,6 @@
    ========================= */
 
 /* --- Couleurs principales --- */
-$black: #1e1f22;
 $black-primary: #1e1f22;
 $black-secondary: #4c4f55;
 $black-tertiary: #d6d6d6;
@@ -14,33 +13,19 @@ $white: #ffffff;
 $white-secondary: #f6f6f6;
 $white-tertiary: #f7f9f9;
 
-//$accent-green: #76d8c6;
-$accent-green: #b137c8;
-$accent-green: #36c866;
-$accent-blue: #88c1ed;
-$accent-blue-dark: #2e3551;
-$accent-green-dark: #1f3f2f; // Nuance plus claire pour hover
-$accent-ocre: #b76b59;
-// $accent-orange: #f4a261;
-$accent-orange: #b137c8;
-$accent-orange: #36c866;
-//$accent-pink: #fa6ead;#da6efa
-$accent-pink: #da6efa;
-$accent-pink: #7cd09d;
-//$accent-yellow: #fbd456;
-$accent-yellow: #da6efa;
-$accent-yellow: #7cd09d;
+/* --- Gamme verte GAIA (H=143°, même teinte) --- */
+$accent-green:      #36c866; // Primaire — boutons, CTA, actif       (S=57%, L=50%)
+$accent-green-soft: #72c890; // Doux — indicateurs, accents, hovers  (S=38%, L=62%)
+$accent-green-dark: #1a4830; // Sombre — hover dark                  (S=45%, L=19%)
 
-$pink-tertiary: #e7dfff;
-$green-tertiary: #fff;
-/* --- États et variations --- */
-$success: $accent-green;
+/* --- Autres accents --- */
+$accent-orange: #f4a261; // Pastilles et points d'emphase
+
+/* --- États --- */
 $error: #d54c4c;
-$warning: #e2b441;
 
 /* --- Dégradés --- */
 $gradient-green: linear-gradient(135deg, #254312, #3d7a5a);
-$gradient-ocre: linear-gradient(135deg, #b76b59, #8d4f43);
 
 /* --- Ombres & bordures --- */
 $shadow-soft:

@@ -34,7 +34,7 @@
 			left: 0;
 			width: 48px;
 			height: 2px;
-			background: $accent-pink;
+			background: $accent-green-soft;
 		}
 	}
 
@@ -89,7 +89,7 @@
 		flex-shrink: 0;
 		width: 32px;
 		height: 2px;
-		background-color: $accent-pink;
+		background-color: $accent-green-soft;
 		margin-top: 13px;
 	}
 
@@ -128,7 +128,7 @@
 			letter-spacing: 0.01em;
 			margin: 0;
 			padding-left: 24px;
-			border-left: 3px solid $accent-yellow;
+			border-left: 3px solid $accent-green-soft;
 			
 			&::before {
 				content: '"';

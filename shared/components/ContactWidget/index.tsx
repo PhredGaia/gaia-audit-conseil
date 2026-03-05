@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import './style.scss';
 
 const PHONE = '06 70 89 36 40';
@@ -9,6 +10,22 @@ const EMAIL = 'contact@gaia-audit-conseil.fr';
 export default function ContactWidget() {
 	const [open, setOpen] = useState(false);
 	const [copied, setCopied] = useState<'phone' | 'email' | null>(null);
+	const [footerVisible, setFooterVisible] = useState(false);
+	const pathname = usePathname();
+
+	useEffect(() => {
+		const footer = document.querySelector('footer');
+		if (!footer) return;
+
+		const observer = new IntersectionObserver(
+			([entry]) => setFooterVisible(entry.isIntersecting),
+			{ threshold: 0 }
+		);
+		observer.observe(footer);
+		return () => observer.disconnect();
+	}, []);
+
+	if (pathname === '/contact' || footerVisible) return null;
 
 	const copy = async (value: string, type: 'phone' | 'email') => {
 		await navigator.clipboard.writeText(value);

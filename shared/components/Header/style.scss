@@ -23,12 +23,12 @@
 			color: $black-primary;
 
 			&:hover {
-				color: $accent-pink;
+				color: $accent-green-soft;
 			}
 		}
 
 		.header__active-indicator {
-			background-color: $accent-pink;
+			background-color: $accent-green-soft;
 		}
 	}
 
@@ -112,7 +112,7 @@
 		bottom: 0;
 		height: 2px;
 		background-color: $accent-green;
-		background-color: $accent-pink;
+		background-color: $accent-green-soft;
 		transition:
 			left 0.3s ease,
 			width 0.3s ease,
@@ -166,7 +166,7 @@
 		transition: color 0.3s ease;
 
 		&:hover {
-			color: $accent-pink;
+			color: $accent-green-soft;
 		}
 
 		&.active {
@@ -354,17 +354,17 @@
 			}
 
 			&.open {
-				background-color: $accent-yellow;
+				background-color: $accent-green;
 
 				span:nth-child(1) {
-					background-color: $black-primary;
+					background-color: $white;
 					transform: translateY(7px) rotate(45deg);
 				}
 				span:nth-child(2) {
 					opacity: 0;
 				}
 				span:nth-child(3) {
-					background-color: $black-primary;
+					background-color: $white;
 					transform: translateY(-8px) rotate(-45deg);
 				}
 			}
@@ -402,7 +402,7 @@
 
 			&.active {
 				background-color: $white-secondary;
-				border-left-color: $accent-pink;
+				border-left-color: $accent-green-soft;
 				color: $black-primary;
 			}
 		}
