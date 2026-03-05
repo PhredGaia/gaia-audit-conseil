@@ -3,7 +3,7 @@ export const siteConfig = {
 	name: 'GAIA',
 	description:
 		'GAIA accompagne les organisations dans la structuration, l\'amélioration et le pilotage de systèmes de management adaptés à leurs réalités opérationnelles. Audit, conseil, accompagnement et formation en ISO, RSE, EPV et systèmes de management intégrés.',
-	url: process.env.NEXT_PUBLIC_SITE_URL || 'https://gaia.fr',
+	url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.gaia-audit-conseil.fr',
 	ogImage: '/og-image.jpg',
 	twitter: {
 		handle: '@gaia',

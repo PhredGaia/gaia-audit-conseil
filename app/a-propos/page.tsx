@@ -4,7 +4,7 @@ import StructuredData from '@shared/components/StructuredData';
 import About from '@features/a-propos';
 
 export const metadata: Metadata = generatePageMetadata({
-	title: 'À propos - GAIA',
+	title: 'À propos',
 	description:
 		'Découvrez GAIA : une double posture d\'auditeur et d\'accompagnant pour construire des systèmes de management pragmatiques, adaptés et compris par les équipes.',
 	path: '/a-propos'

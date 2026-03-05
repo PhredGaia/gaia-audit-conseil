@@ -5,10 +5,22 @@ import './style.scss';
 
 export default function CookieConsent() {
 	const [open, setOpen] = useState(false);
+	const [footerVisible, setFooterVisible] = useState(false);
 
 	useEffect(() => {
 		const consent = localStorage.getItem('cookie-consent');
 		if (!consent) setOpen(true);
+	}, []);
+
+	useEffect(() => {
+		const footer = document.querySelector('footer');
+		if (!footer) return;
+		const observer = new IntersectionObserver(
+			([entry]) => setFooterVisible(entry.isIntersecting),
+			{ threshold: 0 }
+		);
+		observer.observe(footer);
+		return () => observer.disconnect();
 	}, []);
 
 	const accept = () => {
@@ -20,6 +32,8 @@ export default function CookieConsent() {
 		localStorage.setItem('cookie-consent', 'refused');
 		setOpen(false);
 	};
+
+	if (footerVisible) return null;
 
 	return (
 		<>
