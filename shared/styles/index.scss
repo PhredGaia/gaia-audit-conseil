@@ -45,10 +45,6 @@ body {
 	> * {
 		pointer-events: auto;
 	}
-
-	@media (max-width: $breakpoint-sm) {
-		padding-top: 60px;
-	}
 }
 
 main {

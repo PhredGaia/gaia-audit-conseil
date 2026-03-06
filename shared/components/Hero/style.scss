@@ -53,31 +53,38 @@
 		}
 	}
 
-	&__image-wrapper {
-		position: absolute !important;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		bottom: 0;
-		right: 80px;
-		width: 20%;
-		min-width: 200px;
-		height: auto;
-		overflow: hidden;
+	&__title {
+		font-family: $font-family-primary;
+		font-size: $h1-size-desktop;
+		font-weight: $font-weight-medium;
+		color: $white;
+		line-height: $line-height-tight;
+		letter-spacing: -0.02em;
+		margin: 0;
 	}
 
-	&__image {
-		position: relative !important;
-		display: block;
-		height: auto !important;
-		transform: scaleX(-1);
-		margin: 0 auto;
+	p {
+		color: rgba($white, 0.65);
+		line-height: $line-height-relaxed;
+		margin: 0;
+	}
+
+	&__ui-container {
+		display: flex;
+		gap: $spacing-xl;
+		margin-top: $spacing-md;
+		flex-wrap: wrap;
+		justify-content: center;
 	}
 
 	/* --- Desktop moyen (≤ 1280px) --- */
 	@media (max-width: $breakpoint-lg) {
 		&__text-column .container {
 			padding: 0 $container-padding-x-tablet;
+		}
+
+		&__title {
+			font-size: $h1-size-lg;
 		}
 	}
 
@@ -93,6 +100,10 @@
 		&__text-column .container {
 			padding: 0 $container-padding-x-tablet;
 		}
+
+		&__title {
+			font-size: $h1-size-md;
+		}
 	}
 
 	/* --- Mobile (≤ 768px) --- */
@@ -101,7 +112,7 @@
 		padding: 0;
 		margin-top: 0;
 		background: linear-gradient(to right, $black-primary, #2d344f 80%);
-		padding: $spacing-3xl 0 0;
+		padding: 80px 0 0;
 
 		&__content {
 			padding: $spacing-3xl 0;
@@ -125,20 +136,34 @@
 			margin-bottom: $spacing-3xl;
 		}
 
-		&__image-column {
-			order: 0;
-			width: 100%;
+		&__title {
+			font-size: $h1-size-sm;
 		}
 
-		&__image-wrapper {
-			width: 100%;
-			right: 90px;
+		&__description {
+			font-size: $body-size-sm;
 		}
 
-		&__image {
-			width: 100% !important;
+		&__ui-container {
+			flex-direction: column;
+			gap: $spacing-lg;
 
-			transform: scaleX(1);
+			.button-primary,
+			.button-tertiary {
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+
+	/* --- Petit Mobile (≤ 480px) --- */
+	@media (max-width: $breakpoint-xs) {
+		&__title {
+			font-size: $h1-size-xs;
+		}
+
+		&__description {
+			font-size: $body-size-xs;
 		}
 	}
 }

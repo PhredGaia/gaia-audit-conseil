@@ -6,9 +6,10 @@ export default function OffresHero() {
 		<Hero>
 			<>
 				<h1 className="hero__title">Nos offres</h1>
-				<p className="hero__description text-level-2">
-					GAIA accompagne les organisations dans la construction et l'amélioration de systèmes de management
-					cohérents, utiles et adaptés à leur contexte.
+				<p className="hero__description text-level-1">
+					GAIA accompagne les organisations dans la construction et
+					l'amélioration de systèmes de management cohérents, utiles
+					et adaptés à leur contexte.
 				</p>
 			</>
 		</Hero>

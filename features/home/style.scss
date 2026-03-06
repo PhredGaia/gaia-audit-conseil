@@ -1,1 +1,38 @@
 // Styles globaux pour la feature home si nécessaire
+.home-hero-wrapper {
+	position: relative;
+
+	&__image-wrapper {
+		position: absolute !important;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		bottom: -15px;
+		right: 80px;
+		width: 380px;
+		height: auto;
+		overflow: hidden;
+	}
+
+	&__image {
+		position: relative !important;
+		display: block;
+		height: auto !important;
+		transform: scaleX(-1);
+		margin: 0 auto;
+	}
+
+	@media (max-width: 768px) {
+		&__image-wrapper {
+			right: 78px;
+			width: 410px;
+			bottom: -39px;
+		}
+
+		&__image {
+			width: 100% !important;
+
+			transform: scaleX(1);
+		}
+	}
+}

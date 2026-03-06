@@ -1,8 +1,40 @@
 .offres {
 	background-color: $white;
 
-	.hero__image-wrapper,
-	.hero__image {
-		height: auto !important;
+	.offres-hero-wrapper {
+		position: relative;
+
+		&__image-wrapper {
+			position: absolute !important;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			bottom: -50px;
+			left: -20px;
+			width: 260px;
+			height: auto;
+			overflow: hidden;
+		}
+
+		&__image {
+			position: relative !important;
+			display: block;
+			height: auto !important;
+			margin: 0 auto;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.offres-hero-wrapper {
+			&__image-wrapper {
+				left: 100%;
+				transform: translateX(-90%);
+				bottom: -54px;
+			}
+
+			&__image {
+				width: 100% !important;
+			}
+		}
 	}
 }

@@ -1,37 +1,21 @@
 import './style.scss';
-import Image from 'next/image';
 import type { ReactNode } from 'react';
 
 interface HeroProps {
 	children: ReactNode;
-	src?: string;
 }
 
-export default function Hero({ src, children }: HeroProps) {
+export default function Hero({ children }: HeroProps) {
 	return (
 		<div className="hero">
 			<div className="hero__content">
-				<div
-					className={`container${src ? '' : ' hero__container--full'}`}
-				>
+				<div className={`container hero__container--full`}>
 					<div
-						className={`hero__text-column${src ? '' : ' hero__text-column--full'}`}
+						className={`hero__text-column hero__text-column--full`}
 					>
 						{children}
 					</div>
 				</div>
-			</div>
-
-			<div className="hero__image-wrapper">
-				<Image
-					src={'/bonhomme-hero.png'}
-					alt="GAIA - Audit Conseil Formation"
-					fill
-					priority={true}
-					sizes="(max-width: 768px) 100vw, 50vw"
-					quality={85}
-					className="hero__image"
-				/>
 			</div>
 		</div>
 	);

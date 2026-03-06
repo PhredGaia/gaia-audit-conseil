@@ -1,6 +1,7 @@
 import './style.scss';
 import OffresHero from './Hero';
 import OfferSection from './OfferSection';
+import Image from 'next/image';
 
 interface OfferSectionData {
 	title: string;
@@ -23,14 +24,27 @@ interface OffresProps {
 export default function Offres({ sections = [] }: OffresProps) {
 	return (
 		<div className="offres">
-			<OffresHero />
+			<div className="offres-hero-wrapper">
+				<OffresHero />
+				<div className="offres-hero-wrapper__image-wrapper">
+					<Image
+						src={'/bonhomme-offres.png'}
+						alt="GAIA - Audit Conseil Formation"
+						fill
+						priority={true}
+						sizes="(max-width: 768px) 100vw, 50vw"
+						quality={85}
+						className="offres-hero-wrapper__image"
+					/>
+				</div>
+			</div>
 
 			{sections.map((section, index) => (
 				<OfferSection
 					key={index}
 					title={section.title}
 					description={section.description}
-					items={section.items?.map(item => ({
+					items={section.items?.map((item) => ({
 						label: item.title,
 						list: item.list
 					}))}

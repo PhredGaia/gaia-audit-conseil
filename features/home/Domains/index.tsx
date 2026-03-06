@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import './style.scss';
 
 export default function Domains() {
@@ -14,6 +15,17 @@ export default function Domains() {
 		<section className="domains">
 			<h2 className="domains__title">Nos domaines d'intervention</h2>
 			<div className="domains__wrapper">
+				<div className="domains__image-wrapper">
+					<Image
+						src={'/bonhomme-note.png'}
+						alt="GAIA - Audit Conseil Formation"
+						fill
+						priority={true}
+						sizes="(max-width: 768px) 100vw, 50vw"
+						quality={85}
+						className="approach-domains__image"
+					/>
+				</div>
 				<ul>
 					{domains.map((domain, index) => (
 						<li key={index}>

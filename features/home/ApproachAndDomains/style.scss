@@ -62,6 +62,10 @@
 		&__wrapper {
 			gap: $spacing-3xl;
 		}
+
+		&__image-wrapper {
+			display: none;
+		}
 	}
 }
 

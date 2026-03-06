@@ -10,19 +10,55 @@
 		padding: $spacing-5xl;
 	}
 
+	.about-hero-wrapper {
+		position: relative;
+
+		&__image-wrapper {
+			position: absolute !important;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			bottom: -50px;
+			left: -20px;
+			width: 260px;
+			height: auto;
+			overflow: hidden;
+		}
+
+		&__image {
+			position: relative !important;
+			display: block;
+			height: auto !important;
+			transform: scaleX(-1);
+			margin: 0 auto;
+		}
+	}
+
 	/* --- Tablette (≤ 1024px) --- */
 	@media (max-width: $breakpoint-md) {
 		&__theme-wrapper {
 			display: block;
 			padding: $spacing-2xl;
 		}
-
 	}
 
 	@media (max-width: 768px) {
 		&__theme-wrapper {
 			display: block;
 			padding: $spacing-xl;
+		}
+
+		.about-hero-wrapper {
+			&__image-wrapper {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			&__image {
+				width: 100% !important;
+
+				transform: scaleX(1);
+			}
 		}
 	}
 }
