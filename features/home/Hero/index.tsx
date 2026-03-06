@@ -18,7 +18,7 @@ export default function () {
 				<p className="hero__tagline text-level-1">{tagline}</p>
 				<p className="hero__description text-level-1">{description}</p>
 				<div className="hero__ui-container">
-					<Link href="/formations" className="button-primary">
+					<Link href="/contact" className="button-primary">
 						{buttonContactLabel}
 					</Link>
 					<Link href="/offres" className="button-tertiary">
