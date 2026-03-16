@@ -41,7 +41,7 @@ export default function About() {
 				<AProposHero />
 				<div className="about-hero-wrapper__image-wrapper">
 					<Image
-						src={'/bonhomme-a-propos.png'}
+						src={'/bonhomme-a-propos.webp'}
 						alt="GAIA - Audit Conseil Formation"
 						fill
 						priority={true}

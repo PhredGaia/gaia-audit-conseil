@@ -19,7 +19,7 @@ export default function HomePage() {
 				<Hero />
 				<div className="home-hero-wrapper__image-wrapper">
 					<Image
-						src={'/bonhomme-hero.png'}
+						src={'/bonhomme-hero.webp'}
 						alt="GAIA - Audit Conseil Formation"
 						fill
 						priority={true}

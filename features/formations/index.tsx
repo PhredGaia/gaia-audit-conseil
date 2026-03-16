@@ -22,7 +22,7 @@ export default function Formations({ formations = [] }: FormationsProps) {
 				<FormationsHero />
 				<div className="formations-hero-wrapper__image-wrapper">
 					<Image
-						src={'/bonhomme-formations.png'}
+						src={'/bonhomme-formations.webp'}
 						alt="GAIA - Audit Conseil Formation"
 						fill
 						priority={true}

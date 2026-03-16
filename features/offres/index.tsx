@@ -28,7 +28,7 @@ export default function Offres({ sections = [] }: OffresProps) {
 				<OffresHero />
 				<div className="offres-hero-wrapper__image-wrapper">
 					<Image
-						src={'/bonhomme-offres.png'}
+						src={'/bonhomme-offres.webp'}
 						alt="GAIA - Audit Conseil Formation"
 						fill
 						priority={true}

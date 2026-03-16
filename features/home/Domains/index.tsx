@@ -17,7 +17,7 @@ export default function Domains() {
 			<div className="domains__wrapper">
 				<div className="domains__image-wrapper">
 					<Image
-						src={'/bonhomme-note.png'}
+						src={'/bonhomme-note.webp'}
 						alt="GAIA - Audit Conseil Formation"
 						fill
 						priority={true}

@@ -18,7 +18,7 @@ export default function ApproachAndDomains() {
 			</div>
 			<div className="approach-domains__image-wrapper">
 				<Image
-					src={'/bonhomme-note.png'}
+					src={'/bonhomme-note.webp'}
 					alt="GAIA - Audit Conseil Formation"
 					fill
 					priority={true}
