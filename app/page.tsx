@@ -10,6 +10,20 @@ export const metadata: Metadata = generatePageMetadata({
 	path: '/'
 });
 
+/**
+ * @component Page
+ *
+ * Root entry point for the home route (`/`). Injects Organization and WebSite
+ * structured data for SEO, then renders the full home page feature.
+ *
+ * @example
+ * // Resolved automatically by Next.js App Router for the `/` route.
+ * // No manual rendering needed.
+ *
+ * @example
+ * // To preview in isolation during development:
+ * <Page />
+ */
 export default function Page() {
 	return (
 		<>

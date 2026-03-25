@@ -4,6 +4,7 @@ import { deskTool } from 'sanity/desk';
 import home from '../../features/home/home.schema';
 import offres from '../../features/offres/offres.schema';
 import formations from '../../features/formations/formations.schema';
+import actualite from '../../features/actualites/actualite.schema';
 
 export default defineConfig({
 	name: 'default',
@@ -12,6 +13,6 @@ export default defineConfig({
 	dataset: 'production',
 	plugins: [deskTool()],
 	schema: {
-		types: [home, offres, formations]
+		types: [home, offres, formations, actualite]
 	}
 });

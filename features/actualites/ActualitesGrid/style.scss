@@ -1,0 +1,26 @@
+@use '@shared/styles/variables' as *;
+
+.actualites-grid-section {
+	padding: $spacing-5xl 0;
+
+	&__empty {
+		color: $black-secondary;
+		text-align: center;
+		padding: $spacing-5xl 0;
+	}
+}
+
+.actualites-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: $spacing-xl;
+
+	@media (max-width: $breakpoint-md) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		grid-template-columns: 1fr;
+		gap: $spacing-lg;
+	}
+}
