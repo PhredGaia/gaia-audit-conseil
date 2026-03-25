@@ -1,4 +1,4 @@
-import './style.scss';
+import Hero from '@shared/components/Hero';
 import ActualitesGrid from './ActualitesGrid';
 
 export interface Article {
@@ -16,15 +16,15 @@ interface ActualitesProps {
 
 export default function Actualites({ articles }: ActualitesProps) {
 	return (
-		<div className="actualites">
-			<div className="actualites__hero">
-				<div className="container">
-					<h1 className="actualites__title">Actualités</h1>
-					<p className="actualites__subtitle text-level-1">
+		<div>
+			<Hero>
+				<>
+					<h1 className="hero__title">Actualités</h1>
+					<p className="hero__description text-level-1">
 						Nouvelles normes, annonces, événements et articles de GAIA Audit & Conseil.
 					</p>
-				</div>
-			</div>
+				</>
+			</Hero>
 			<ActualitesGrid articles={articles} />
 		</div>
 	);

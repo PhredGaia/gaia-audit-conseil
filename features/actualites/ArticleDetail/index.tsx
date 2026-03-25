@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { PortableText } from '@portabletext/react';
 import SanityImage from '@shared/components/SanityImage';
+import Hero from '@shared/components/Hero';
 import './style.scss';
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -58,29 +59,15 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
 
 	return (
 		<article className="article-detail">
-			<div className="article-detail__hero">
-				{article.coverImage && (
-					<div className="article-detail__cover-wrapper">
-						<SanityImage
-							image={article.coverImage}
-							alt={article.title}
-							width={1400}
-							height={560}
-							className="article-detail__cover"
-							sizes="100vw"
-							priority
-						/>
-						<div className="article-detail__cover-overlay" />
-					</div>
-				)}
-				<div className="container article-detail__hero-content">
+			<Hero>
+				<>
 					<span className={`article-detail__category article-detail__category--${article.category}`}>
 						{categoryLabel}
 					</span>
-					<h1 className="article-detail__title">{article.title}</h1>
-					<time className="article-detail__date text-level-3">{date}</time>
-				</div>
-			</div>
+					<h1 className="hero__title">{article.title}</h1>
+					<time className="article-detail__date text-level-1">{date}</time>
+				</>
+			</Hero>
 
 			<div className="container">
 				<div className="article-detail__body">
