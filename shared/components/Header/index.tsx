@@ -12,6 +12,7 @@ const baseNavLinks = [
 	{ name: 'Accueil', path: '/' },
 	{ name: 'Offres', path: '/offres' },
 	{ name: 'Formations', path: '/formations' },
+	{ name: 'Actualités', path: '/actualites' },
 	{ name: 'À propos', path: '/a-propos' }
 ];
 
