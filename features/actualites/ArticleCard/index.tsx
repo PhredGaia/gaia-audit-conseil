@@ -18,7 +18,7 @@ export default function ArticleCard({ article, categoryLabel }: ArticleCardProps
 	return (
 		<Link href={`/actualites/${article.slug}`} className="article-card">
 			<div className="article-card__image-wrapper">
-				{article.coverImage ? (
+				{article.coverImage?.asset ? (
 					<SanityImage
 						image={article.coverImage}
 						alt={article.title}

@@ -13,21 +13,24 @@ const CATEGORY_LABELS: Record<string, string> = {
 
 const portableTextComponents = {
 	types: {
-		image: ({ value }: any) => (
-			<figure className="article-detail__figure">
-				<SanityImage
-					image={value}
-					alt={value.alt || ''}
-					width={900}
-					height={540}
-					className="article-detail__content-image"
-					sizes="(max-width: 768px) 100vw, 860px"
-				/>
-				{value.caption && (
-					<figcaption className="article-detail__caption">{value.caption}</figcaption>
-				)}
-			</figure>
-		)
+		image: ({ value }: any) => {
+			if (!value?.asset) return null;
+			return (
+				<figure className="article-detail__figure">
+					<SanityImage
+						image={value}
+						alt={value.alt || ''}
+						width={900}
+						height={540}
+						className="article-detail__content-image"
+						sizes="(max-width: 768px) 100vw, 860px"
+					/>
+					{value.caption && (
+						<figcaption className="article-detail__caption">{value.caption}</figcaption>
+					)}
+				</figure>
+			);
+		}
 	},
 	block: {
 		h2: ({ children }: any) => <h2 className="article-detail__h2">{children}</h2>,
