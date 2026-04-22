@@ -14,7 +14,7 @@ const CATEGORY_LABELS: Record<string, string> = {
 const portableTextComponents = {
 	types: {
 		image: ({ value }: any) => {
-			if (!value?.asset) return null;
+			if (!value?.asset?._ref) return null;
 			return (
 				<figure className="article-detail__figure">
 					<SanityImage

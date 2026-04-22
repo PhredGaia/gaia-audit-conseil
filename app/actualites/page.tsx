@@ -10,7 +10,7 @@ const queryActualites = `
 		"slug": slug.current,
 		publishedAt,
 		category,
-		coverImage { asset->{ _id, url }, hotspot, crop },
+		coverImage,
 		excerpt
 	}
 `;

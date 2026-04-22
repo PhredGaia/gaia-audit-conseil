@@ -11,12 +11,9 @@ const queryArticle = `
 		"slug": slug.current,
 		publishedAt,
 		category,
-		coverImage { asset->{ _id, url }, hotspot, crop },
+		coverImage,
 		excerpt,
-		content[] {
-			...,
-			_type == "image" => { ..., asset->{ _id, url } }
-		},
+		content,
 		seo
 	}
 `;
