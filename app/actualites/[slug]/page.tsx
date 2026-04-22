@@ -18,16 +18,8 @@ const queryArticle = `
 	}
 `;
 
-const querySlugs = `
-	*[_type == "actualite"]{ "slug": slug.current }
-`;
 
-export const revalidate = 3600;
-
-export async function generateStaticParams() {
-	const articles = await client.fetch(querySlugs);
-	return articles.map(({ slug }: { slug: string }) => ({ slug }));
-}
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({
 	params
