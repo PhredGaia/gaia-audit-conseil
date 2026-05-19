@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { generatePageMetadata } from '@shared/config/seo';
 import { client } from '@shared/utils/sanity.client';
+import { urlForImg } from '@shared/utils/sanity';
 import StructuredData from '@shared/components/StructuredData';
 import ArticleDetail from '@features/actualites/ArticleDetail';
 
@@ -40,7 +41,7 @@ export async function generateMetadata({
 		title: article.seo?.metaTitle || `${article.title} - GAIA`,
 		description: article.seo?.metaDescription || article.excerpt || '',
 		path: `/actualites/${params.slug}`,
-		image: article.seo?.openGraphImage || article.coverImage
+		image: article.coverImage?.asset?._ref ? urlForImg(article.coverImage).width(1200).height(630).url() : undefined
 	});
 }
 
