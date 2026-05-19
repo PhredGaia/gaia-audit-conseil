@@ -52,13 +52,15 @@ interface ArticleDetailProps {
 }
 
 export default function ArticleDetail({ article }: ArticleDetailProps) {
-	const date = new Date(article.publishedAt).toLocaleDateString('fr-FR', {
-		day: 'numeric',
-		month: 'long',
-		year: 'numeric'
-	});
+	const date = article.publishedAt
+		? new Date(article.publishedAt).toLocaleDateString('fr-FR', {
+				day: 'numeric',
+				month: 'long',
+				year: 'numeric'
+		  })
+		: '';
 
-	const categoryLabel = CATEGORY_LABELS[article.category] || article.category;
+	const categoryLabel = CATEGORY_LABELS[article.category] || article.category || '';
 
 	return (
 		<article className="article-detail">
