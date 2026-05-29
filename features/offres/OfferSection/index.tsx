@@ -13,12 +13,12 @@ interface OfferSectionProps {
 	ctaHref?: string;
 }
 
-export default function OfferSection({ 
-	title, 
-	description, 
-	items, 
-	ctaIntro, 
-	ctaLabel, 
+export default function OfferSection({
+	title,
+	description,
+	items,
+	ctaIntro,
+	ctaLabel,
 	ctaHref
 }: OfferSectionProps) {
 	return (

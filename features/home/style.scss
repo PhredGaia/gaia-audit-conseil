@@ -5,13 +5,13 @@
 	&__image-wrapper {
 		position: absolute !important;
 		display: flex;
-		align-items: center;
+		align-items: flex-end;
 		justify-content: center;
-		bottom: -15px;
-		right: 80px;
-		width: 380px;
+		bottom: 40px;
+		right: 60px;
+		width: 460px;
 		height: auto;
-		overflow: hidden;
+		overflow: visible;
 	}
 
 	&__image {
@@ -24,15 +24,14 @@
 
 	@media (max-width: 768px) {
 		&__image-wrapper {
-			right: 78px;
-			width: 410px;
-			bottom: -39px;
+			bottom: -10px;
+			right: -10px;
+			width: 340px;
 		}
 
 		&__image {
 			width: 100% !important;
-
-			transform: scaleX(1);
+			transform: scaleX(-1);
 		}
 	}
 }

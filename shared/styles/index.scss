@@ -29,7 +29,12 @@ body {
 }
 body {
 	width: 100%;
+	font-family: $font-family-primary;
+	font-size: $body-size-desktop;
 	line-height: $line-height-normal;
+	color: $black-primary;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	pointer-events: none;
 
 	&:before {
@@ -186,30 +191,36 @@ a {
    ========================= */
 
 .button-primary {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
 	background-color: $accent-green;
 	color: $white;
-	padding: 12px 20px;
-	border-radius: 2px;
-	font-weight: $font-weight-regular;
+	padding: 10px 24px;
+	border-radius: 9999px;
+	font-family: $font-family-primary;
+	font-weight: $font-weight-medium;
+	font-size: $body-size-desktop;
+	line-height: 1.5;
 	text-align: center;
+	box-shadow: $shadow-soft;
 	transition: all 0.3s ease;
-	line-height: 29px;
-	font-size: $small-size-desktop;
-	transition: all 0.4s;
+
 	&:hover {
 		background-color: $accent-green-dark;
 		box-shadow: $shadow-strong;
 		color: $white;
 	}
-	border-radius: 10px;
-	box-shadow: $shadow-soft;
 }
 
 .button-secondary {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
 	background-color: $white;
 	color: $black-primary;
+	padding: 10px 24px;
+	font-family: $font-family-primary;
+	font-size: $body-size-desktop;
+	line-height: 1.5;
 	transition: background-color 0.3s ease;
 
 	&:hover {
@@ -218,22 +229,23 @@ a {
 }
 
 .button-tertiary {
-	display: inline-block;
-	background-color: $white;
-	color: $black-primary;
-	border: 1px solid $black-primary;
-	padding: 12px 20px;
-	border-radius: 10px;
-	font-weight: $font-weight-regular;
+	display: inline-flex;
+	align-items: center;
+	background-color: transparent;
+	color: $white;
+	border: 1px solid rgba($white, 0.4);
+	padding: 10px 24px;
+	border-radius: 9999px;
+	font-family: $font-family-primary;
+	font-weight: $font-weight-medium;
+	font-size: $body-size-desktop;
+	line-height: 1.5;
 	text-align: center;
-	transition:
-		background-color 0.3s ease,
-		color 0.3s ease;
-	font-size: $small-size-desktop;
-	line-height: 29px;
+	transition: all 0.3s ease;
 
 	&:hover {
-		color: $accent-green;
+		border-color: $white;
+		background-color: rgba($white, 0.08);
 	}
 }
 

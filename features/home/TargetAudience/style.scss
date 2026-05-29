@@ -1,217 +1,123 @@
 .target-audience {
 	padding: $spacing-5xl 0;
 	background: $white-tertiary;
-	position: relative;
-	overflow: hidden;
-
-
 
 	.container {
-		position: relative;
-		z-index: 1;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
 
+	&__header {
+		text-align: center;
+		max-width: 720px;
+		margin-bottom: $spacing-5xl;
+		display: flex;
+		flex-direction: column;
+		gap: $spacing-md;
+	}
+
 	&__title {
-		width: fit-content;
 		font-family: $font-family-primary;
 		font-size: $h2-size-desktop;
-		font-weight: $font-weight-medium;
+		font-weight: $font-weight-bold;
 		color: $black-primary;
-		letter-spacing: -0.02em; // Légère compression pour élégance
+		letter-spacing: -0.02em;
 		line-height: $line-height-tight;
-		margin: 0 auto $title-margin-bottom-desktop;
-		position: relative;
-		padding-bottom: $spacing-md;
-		
-		// Trait vert sous le titre
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 48px;
-			height: 2px;
-			background: $accent-green-soft;
-		}
+		margin: 0;
 	}
 
 	&__intro {
-		text-align: center;
-		font-size: clamp(15px, 1.5vw, 18px);
-		font-weight: 400;
-		line-height: 1.75; // Légèrement augmenté pour meilleure lisibilité
-		letter-spacing: 0.01em;
+		font-size: 18px;
 		color: $black-secondary;
-		margin: 0 auto $spacing-4xl; // 80px - espacement encore plus généreux avant les cartes
-		max-width: 68ch; // Légèrement augmenté pour meilleure lisibilité
+		line-height: $line-height-relaxed;
+		margin: 0;
 	}
 
 	&__list {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: $spacing-xl; // 32px - gap généreux entre cartes
-		align-items: stretch;
-		margin: 0 auto $spacing-4xl;
+		gap: $spacing-xl;
+		list-style: none;
+		padding: 0;
+		margin: 0 0 $spacing-4xl;
+		width: 100%;
+	}
 
-		li {
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start; // Alignement en haut selon Swiss Design
-			gap: $spacing-md; // 16px - espacement interne entre titre et texte
-			padding: $spacing-2xl; // 40px - padding encore plus généreux
-			background: $white;
-			border: $border-card;
-			border-radius: 4px;
-			box-shadow: $shadow-soft;
-			height: 100%;
-			position: relative;
-			border-radius: 20px;
+	&__card {
+		padding: $spacing-2xl;
+		background: $white;
+		border-left: 4px solid $accent-green;
+		border-radius: 4px;
+		box-shadow: $shadow-soft;
+		transition: box-shadow 0.3s ease;
+		display: flex;
+		flex-direction: column;
+		gap: $spacing-md;
+
+		&:hover {
+			box-shadow: $shadow-medium;
 		}
+	}
+
+	&__card-icon {
+		width: 48px;
+		height: 48px;
+		background: #DFF8EC;
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $accent-green;
 	}
 
 	&__item-title {
-		font-size: clamp(17px, 1.4vw, 21px);
-		font-weight: 600; // Plus épais comme dans "Notre approche"
-		line-height: 1.35;
-		letter-spacing: -0.015em;
-		color: $black-primary; // Titres en noir
-		margin-bottom: $spacing-sm; // 8px - espacement plus généreux après titre
-		display: flex;
-		align-items: flex-start;
-		gap: $spacing-md; // Espacement entre le trait et le titre
-	}
-   
-	&__item-accent {
-		display: block;
-		flex-shrink: 0;
-		width: 32px;
-		height: 2px;
-		background-color: $accent-green-soft;
-		margin-top: 13px;
+		font-family: $font-family-primary;
+		font-size: $h3-size-desktop;
+		font-weight: $font-weight-semibold;
+		color: $black-primary;
+		line-height: $line-height-normal;
+		margin: 0;
 	}
 
 	&__item-subtitle {
-		font-size: clamp(14px, 1.2vw, 16px);
-		font-weight: 400;
-		line-height: 1.75; // Augmenté pour meilleure lisibilité
-		letter-spacing: 0.005em; // Légèrement réduit pour plus de fluidité
+		font-size: $body-size-desktop;
 		color: $black-secondary;
-		margin-top: auto; // Pousse le texte vers le bas pour alignement uniforme
+		line-height: $line-height-loose;
+		margin: 0;
 	}
 
-	&__quote {
-		width: 100vw;
-		position: relative;
-		left: 50%;
-		right: 50%;
-		margin-left: -50vw;
-		margin-right: -50vw;
-		background: #eef4ea; // Fond vert pâle
-		padding: $spacing-5xl 0; // 80px
-		margin-top: $spacing-5xl; // 80px
-
-		.container {
-			max-width: 720px;
-			margin: 0 auto;
-		}
-
-		p {
-			font-family: var(--font-inter), sans-serif;
-			font-size: clamp(22px, 3vw, 32px);
-			font-weight: 400;
-			font-style: italic;
-			color: $black-primary;
-			line-height: 1.5;
-			letter-spacing: 0.01em;
-			margin: 0;
-			padding-left: 24px;
-			border-left: 3px solid $accent-green-soft;
-			
-			&::before {
-				content: '"';
-			}
-			
-			&::after {
-				content: '"';
-			}
-		}
-	}
-
-	/* --- Desktop moyen (≤ 1280px) --- */
-	@media (max-width: $breakpoint-lg) {
-		&__title {
-			font-size: $h2-size-lg;
-			margin-bottom: $title-margin-bottom-tablet;
-		}
+	&__cta {
+		display: flex;
+		justify-content: center;
 	}
 
 	/* --- Tablette (≤ 1024px) --- */
 	@media (max-width: $breakpoint-md) {
-		padding: $spacing-4xl 0; // 64px sur tablette
-
 		&__title {
 			font-size: $h2-size-md;
-			margin-bottom: $spacing-lg; // 24px
-		}
-
-		&__intro {
-			margin-bottom: $spacing-4xl; // 64px
-			max-width: 100%;
 		}
 
 		&__list {
-			grid-template-columns: repeat(2, 1fr);
-			gap: $spacing-xl; // 32px - gap plus généreux
-			margin-bottom: $spacing-4xl; // 64px
-
-			li {
-				padding: $spacing-xl; // 32px
-			}
-		}
-
-		&__quote {
-			margin-top: $spacing-4xl; // 64px
-			padding: $spacing-4xl 0; // 64px
+			grid-template-columns: 1fr;
+			max-width: 560px;
 		}
 	}
 
 	/* --- Mobile (≤ 768px) --- */
 	@media (max-width: $breakpoint-sm) {
-		padding: $spacing-3xl 0; // 48px sur mobile
+		padding: $spacing-3xl 0;
 
 		&__title {
 			font-size: $h2-size-sm;
-			margin-bottom: $spacing-lg; // 24px
-			width: 100%;
 		}
 
 		&__intro {
-			margin-bottom: $spacing-3xl; // 48px
+			font-size: $body-size-sm;
 		}
 
-		&__list {
-			grid-template-columns: 1fr;
-			gap: $spacing-xl; // 32px - gap plus généreux
-			margin-bottom: $spacing-3xl; // 48px
-
-			li {
-				padding: $spacing-xl; // 32px
-			}
-		}
-
-		&__quote {
-			margin-top: $spacing-3xl; // 48px
-			padding: $spacing-3xl 0; // 48px
-		}
-	}
-
-	/* --- Petit Mobile (≤ 480px) --- */
-	@media (max-width: $breakpoint-xs) {
-		&__title {
-			font-size: $h2-size-xs;
+		&__card {
+			padding: $spacing-xl;
 		}
 	}
 }

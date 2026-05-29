@@ -1,96 +1,130 @@
 .why {
-	padding: $section-padding-y-desktop 0;
-	background-color: $white-tertiary;
-	border-bottom: $border;
-
-	&__title {
-		font-family: $font-family-primary;
-		font-size: $h2-size-desktop;
-		font-weight: $font-weight-medium;
-		color: $black-primary;
-		margin-bottom: $title-margin-bottom-desktop;
-		position: relative;
-		padding-bottom: $spacing-md;
-
-		// Trait vert sous le titre
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 48px;
-			height: 2px;
-			background: $accent-green-soft;
-		}
-	}
+	padding: $spacing-5xl 0;
+	background-color: $white;
 
 	&__content-wrapper {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: $spacing-5xl;
-		align-items: start;
+		align-items: center;
 	}
 
 	&__text-block {
 		display: flex;
 		flex-direction: column;
-		gap: $spacing-xl;
+		gap: $spacing-lg;
+	}
+
+	&__label {
+		font-family: $font-family-primary;
+		font-size: $small-size-desktop;
+		font-weight: $font-weight-semibold;
+		color: $accent-green;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+	}
+
+	&__title {
+		font-family: $font-family-primary;
+		font-size: $h2-size-desktop;
+		font-weight: $font-weight-bold;
+		color: $black-primary;
+		line-height: $line-height-tight;
+		letter-spacing: -0.02em;
+		margin: 0;
 	}
 
 	&__paragraph {
+		font-size: $body-size-desktop;
 		color: $black-secondary;
+		line-height: $line-height-relaxed;
 		margin: 0;
 	}
 
 	&__cta-box {
-		background: $white;
+		background: #DFF8EC;
 		padding: $spacing-3xl;
-		border-radius: 20px;
-		border: $border-card;
-		box-shadow: $shadow-soft;
+		border-radius: 16px;
 		display: flex;
 		flex-direction: column;
 		gap: $spacing-xl;
-		align-items: flex-start;
 	}
 
-	&__cta-intro {
+	&__cta-title {
+		font-family: $font-family-primary;
+		font-size: $h3-size-desktop;
+		font-weight: $font-weight-semibold;
 		color: $black-primary;
+		line-height: $line-height-normal;
 		margin: 0;
 	}
 
-	/* --- Desktop moyen (≤ 1280px) --- */
-	@media (max-width: $breakpoint-lg) {
-		&__title {
-			font-size: $h2-size-lg;
-			margin-bottom: $title-margin-bottom-tablet;
+	&__cta-actions {
+		display: flex;
+		flex-direction: column;
+		gap: $spacing-md;
+	}
+
+	&__cta-btn {
+		width: 100%;
+		justify-content: center;
+		gap: $spacing-sm;
+	}
+
+	&__btn-outline {
+		color: $black-primary !important;
+		border-color: rgba($black-primary, 0.25) !important;
+		background-color: transparent !important;
+
+		&:hover {
+			border-color: $black-primary !important;
+			background-color: rgba($black-primary, 0.05) !important;
 		}
 	}
 
-	/* --- Tablette (≤ 1024px) --- */
-	@media (max-width: $breakpoint-md) {
-		&__title {
-			font-size: $h2-size-md;
-			margin-bottom: $title-margin-bottom-tablet;
-		}
+	&__cta-divider {
+		display: flex;
+		align-items: center;
+		gap: $spacing-md;
+		color: $black-secondary;
+		font-size: $small-size-desktop;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
 
+		&::before,
+		&::after {
+			content: '';
+			flex: 1;
+			height: 1px;
+			background: rgba($black-primary, 0.2);
+		}
+	}
+
+	&__cta-trust {
+		font-size: $small-size-desktop;
+		color: $black-secondary;
+		text-align: center;
+		margin: 0;
+		padding-top: $spacing-lg;
+		border-top: 1px solid rgba($black-primary, 0.15);
+	}
+
+	@media (max-width: $breakpoint-md) {
 		&__content-wrapper {
+			grid-template-columns: 1fr;
 			gap: $spacing-4xl;
 		}
+
+		&__title {
+			font-size: $h2-size-md;
+		}
 	}
 
-	/* --- Mobile (≤ 768px) --- */
 	@media (max-width: $breakpoint-sm) {
 		padding: $spacing-3xl 0;
 
 		&__title {
 			font-size: $h2-size-sm;
-			margin-bottom: $title-margin-bottom-mobile;
-		}
-
-		&__content-wrapper {
-			grid-template-columns: 1fr;
-			gap: $spacing-3xl;
 		}
 
 		&__paragraph {
@@ -98,26 +132,7 @@
 		}
 
 		&__cta-box {
-			margin-top: $spacing-lg;
-		}
-
-		&__cta-intro {
-			font-size: $body-size-sm;
-		}
-	}
-
-	/* --- Petit Mobile (≤ 480px) --- */
-	@media (max-width: $breakpoint-xs) {
-		&__title {
-			font-size: $h2-size-xs;
-		}
-
-		&__paragraph {
-			font-size: $body-size-xs;
-		}
-
-		&__cta-intro {
-			font-size: $body-size-xs;
+			padding: $spacing-xl;
 		}
 	}
 }

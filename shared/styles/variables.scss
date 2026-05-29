@@ -117,35 +117,35 @@ $line-height-loose: 1.7;
 
 /* --- Desktop Typography (> 1280px) --- */
 $h1-size-desktop: clamp(32px, 3.5vw, 40px); // 32-40px
-$h2-size-desktop: clamp(20px, 2.5vw, 28px); // 20-28px
+$h2-size-desktop: clamp(28px, 3vw, 36px); // 28-36px
 $h3-size-desktop: clamp(18px, 2vw, 22px); // 18-22px
 $body-size-desktop: 16px;
 $small-size-desktop: 14px;
 
 /* --- Desktop moyen Typography (≤ 1280px) --- */
 $h1-size-lg: clamp(30px, 3vw, 36px); // 30-36px
-$h2-size-lg: clamp(20px, 2.3vw, 26px); // 20-26px
+$h2-size-lg: clamp(26px, 2.8vw, 34px); // 26-34px
 $h3-size-lg: clamp(17px, 1.8vw, 20px); // 17-20px
 $body-size-lg: 15px;
 $small-size-lg: 13px;
 
 /* --- Tablette Typography (≤ 1024px) --- */
 $h1-size-md: clamp(30px, 4vw, 32px); // 28-32px
-$h2-size-md: clamp(20px, 2.5vw, 24px); // 20-24px
+$h2-size-md: clamp(24px, 3vw, 30px); // 24-30px
 $h3-size-md: clamp(16px, 2vw, 18px); // 16-18px
 $body-size-md: 15px;
 $small-size-md: 13px;
 
 /* --- Mobile Typography (≤ 768px) --- */
 $h1-size-sm: clamp(30px, 4.5vw, 30px); // 24-30px
-$h2-size-sm: clamp(20px, 3vw, 22px); // 20-22px
+$h2-size-sm: clamp(22px, 3.5vw, 26px); // 22-26px
 $h3-size-sm: clamp(15px, 2.5vw, 17px); // 15-17px
 $body-size-sm: 15px;
 $small-size-sm: 13px;
 
 /* --- Petit Mobile Typography (≤ 480px) --- */
 $h1-size-xs: clamp(30px, 5vw, 28px); // 22-28px
-$h2-size-xs: clamp(20px, 3.5vw, 20px); // 20px fixe
+$h2-size-xs: clamp(20px, 4vw, 22px); // 20-22px
 $h3-size-xs: clamp(14px, 3vw, 16px); // 14-16px
 $body-size-xs: 14px;
 $small-size-xs: 12px;
