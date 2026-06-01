@@ -1,192 +1,213 @@
-@import '@shared/styles/variables';
-
 .formation-card {
 	background: $white;
-	border: $border-card;
-	border-radius: 4px;
-	box-shadow: $shadow-soft;
+	border: 1px solid rgba($accent-green, 0.1);
+	border-radius: 12px;
 	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
-	align-self: flex-start;
+
+	/* ── Header (always visible) ── */
 
 	&__header {
-		padding: $spacing-2xl;
+		width: 100%;
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
-		gap: $spacing-lg;
-		cursor: pointer;
-		user-select: none;
+		gap: $spacing-md;
+		padding: $spacing-xl $spacing-2xl;
 		background: $white;
-		transition: background 0.3s linear;
+		cursor: pointer;
+		text-align: left;
+		border: none;
+		transition: background 0.2s ease;
+
+		&:hover {
+			background: rgba($accent-green, 0.06);
+		}
+	}
+
+	&__dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: $accent-green;
+		flex-shrink: 0;
 	}
 
 	&__title {
 		font-family: $font-family-primary;
-		font-size: clamp(17px, 1.4vw, 21px);
-		font-weight: 600;
-		line-height: 1.35;
-		letter-spacing: -0.015em;
+		font-size: $h3-size-desktop;
+		font-weight: $font-weight-semibold;
 		color: $black-primary;
+		line-height: $line-height-tight;
 		margin: 0;
 		flex: 1;
 	}
 
-	&__toggle {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background-color: $accent-green;
-		cursor: pointer;
-		transition: all 0.2s linear;
-		width: 40px;
-		height: 40px;
-		border-radius: 50%;
-		padding: 0;
+	&__chevron {
+		color: $black-secondary;
+		flex-shrink: 0;
+		transition: transform 0.25s ease;
 
-		&--expanded {
-			background: $navy;
-		}
-
-		&:hover {
-			background: $navy;
-		}
-	}
-
-	&__icon {
-		transition: transform 0.3s linear;
-		color: white;
-		width: 24px;
-		height: 24px;
-		position: relative;
-		top: 1px;
-
-		&--expanded {
+		&--open {
 			transform: rotate(180deg);
-			top: -1px;
 		}
 	}
 
-	&__content {
-		padding: 0 $spacing-2xl;
-		border-top: $border-card;
-		display: flex;
-		flex-direction: column;
-		gap: $spacing-xl;
-		background: $white;
+	/* ── Expandable body ── */
+
+	&__body {
 		overflow: hidden;
 		max-height: 0;
 		opacity: 0;
-		transition: max-height 0.3s linear, opacity 0.3s linear, padding-top 0.3s linear, padding-bottom 0.3s linear;
+		transition: max-height 0.35s ease, opacity 0.25s ease;
+		border-top: 1px solid rgba($accent-green, 0.1);
 	}
 
-	&--expanded &__content {
-		max-height: 1000px;
+	&--expanded &__body {
+		max-height: 800px;
 		opacity: 1;
-		padding-top: $spacing-2xl;
-		padding-bottom: $spacing-2xl;
 	}
 
-	&__field {
+	&__inner {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: $spacing-3xl;
+		padding: $spacing-2xl;
+	}
+
+	/* ── Image ── */
+
+	&__left {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__image-wrapper {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 3 / 2;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+
+	&__image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	/* ── Content ── */
+
+	&__right {
+		display: flex;
+		flex-direction: column;
+		gap: $spacing-xl;
+	}
+
+	&__description {
+		color: $black-secondary;
+		margin: 0;
+		line-height: $line-height-relaxed;
+	}
+
+	&__meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: $spacing-lg;
+	}
+
+	&__meta-item {
+		display: inline-flex;
+		align-items: center;
+		gap: $spacing-sm;
+		font-family: $font-family-primary;
+		font-size: $small-size-desktop;
+		color: $black-secondary;
+
+		svg {
+			color: $accent-green;
+			flex-shrink: 0;
+		}
+	}
+
+	/* ── Méthodologie ── */
+
+	&__methodologie {
+		padding: $spacing-lg;
+		background: $white-secondary;
+		border-left: 3px solid $accent-green-soft;
+		border-radius: 0 6px 6px 0;
 		display: flex;
 		flex-direction: column;
 		gap: $spacing-xs;
 	}
 
-	&__field-label {
+	&__methodologie-label {
 		font-family: $font-family-primary;
-		font-size: clamp(14px, 1.2vw, 16px);
-		font-weight: 600;
+		font-size: $small-size-desktop;
+		font-weight: $font-weight-semibold;
 		color: $black-primary;
-		letter-spacing: -0.01em;
-	}
-
-	&__field-value {
-		font-family: $font-family-primary;
-		font-size: clamp(14px, 1.2vw, 16px);
-		font-weight: 400;
-		color: $black-secondary;
-		line-height: 1.75;
-		letter-spacing: 0.005em;
 		margin: 0;
 	}
 
-	.button-primary {
-		max-width: 180px;
+	&__methodologie-text {
+		color: $black-secondary;
+		margin: 0;
 	}
 
-	/* --- Mobile (≤ 768px) --- */
+	/* ── Modules ── */
+
+	&__modules {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: $spacing-sm;
+	}
+
+	&__module {
+		display: flex;
+		align-items: flex-start;
+		gap: $spacing-sm;
+		font-family: $font-family-primary;
+		font-size: $body-size-desktop;
+		color: $black-primary;
+		line-height: $line-height-relaxed;
+
+		svg {
+			color: $accent-green;
+			flex-shrink: 0;
+			margin-top: 3px;
+		}
+	}
+
+	&__cta {
+		align-self: flex-start;
+	}
+
+	/* ── Responsive ── */
+
+	@media (max-width: $breakpoint-md) {
+		&__inner {
+			grid-template-columns: 1fr;
+			gap: $spacing-xl;
+		}
+
+		&__left {
+			display: flex;
+		}
+	}
+
 	@media (max-width: $breakpoint-sm) {
 		&__header {
+			padding: $spacing-lg $spacing-xl;
+		}
+
+		&__title {
+			font-size: $h3-size-sm;
+		}
+
+		&__inner {
 			padding: $spacing-xl;
-			flex-direction: row;
-			align-items: center;
-			gap: $spacing-md;
-		}
-
-		&__title {
-			font-size: clamp(16px, 1.3vw, 18px);
-		}
-
-		&__toggle {
-			font-size: clamp(12px, 1.1vw, 14px);
-			padding: $spacing-xs;
-		}
-
-		&__content {
-			padding: 0 $spacing-xl;
-		}
-
-		&--expanded &__content {
-			padding-top: $spacing-xl;
-			padding-bottom: $spacing-xl;
-		}
-
-		&__field-label {
-			font-size: clamp(13px, 1.1vw, 15px);
-		}
-
-		&__field-value {
-			font-size: clamp(13px, 1.1vw, 15px);
-		}
-	}
-
-	/* --- Petit Mobile (≤ 480px) --- */
-	@media (max-width: $breakpoint-xs) {
-		&__header {
-			padding: $spacing-lg;
-		}
-
-		&__title {
-			font-size: clamp(15px, 1.2vw, 17px);
-		}
-
-		&__toggle {
-			font-size: clamp(11px, 1vw, 13px);
-		}
-
-		&__content {
-			padding: 0 $spacing-lg;
-		}
-
-		&--expanded &__content {
-			padding-top: $spacing-lg;
-			padding-bottom: $spacing-lg;
-		}
-
-		&__field {
-			gap: $spacing-xs;
-		}
-
-		&__field-label {
-			font-size: clamp(12px, 1vw, 14px);
-		}
-
-		&__field-value {
-			font-size: clamp(12px, 1vw, 14px);
 		}
 	}
 }
-

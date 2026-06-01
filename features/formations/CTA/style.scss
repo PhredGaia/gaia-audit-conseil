@@ -1,0 +1,104 @@
+.formations-cta {
+	padding: $spacing-5xl 0;
+	background-color: $white;
+
+	&__card {
+		max-width: 820px;
+		margin: 0 auto;
+		text-align: center;
+		background: #eef4ea;
+		border-radius: 20px;
+		padding: $spacing-5xl;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: $spacing-xl;
+		border: 1px solid rgba($accent-green, 0.15);
+	}
+
+	&__title {
+		font-family: $font-family-primary;
+		font-size: $h2-size-desktop;
+		font-weight: $font-weight-bold;
+		color: $black-primary;
+		line-height: $line-height-tight;
+		margin: 0;
+	}
+
+	&__text {
+		color: $black-secondary;
+		max-width: 520px;
+		margin: 0;
+	}
+
+	&__actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: $spacing-md;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__phone {
+		display: inline-flex;
+		align-items: center;
+		gap: $spacing-sm;
+		padding: 10px $spacing-lg;
+		border: 1px solid rgba($navy, 0.3);
+		border-radius: 9999px;
+		font-family: $font-family-primary;
+		font-size: $body-size-desktop;
+		font-weight: $font-weight-medium;
+		color: $navy;
+		text-decoration: none;
+		transition: border-color 0.2s ease, background 0.2s ease;
+
+		&:hover {
+			border-color: $navy;
+			background: rgba($navy, 0.05);
+			color: $navy;
+		}
+	}
+
+	@media (max-width: $breakpoint-lg) {
+		padding: $spacing-4xl 0;
+
+		&__title {
+			font-size: $h2-size-lg;
+		}
+	}
+
+	@media (max-width: $breakpoint-md) {
+		&__card {
+			padding: $spacing-3xl;
+		}
+
+		&__title {
+			font-size: $h2-size-md;
+		}
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		padding: $spacing-3xl 0;
+
+		&__card {
+			padding: $spacing-2xl $spacing-xl;
+			border-radius: 12px;
+		}
+
+		&__title {
+			font-size: $h2-size-sm;
+		}
+
+		&__actions {
+			flex-direction: column;
+			width: 100%;
+
+			.button-primary,
+			.formations-cta__phone {
+				width: 100%;
+				justify-content: center;
+			}
+		}
+	}
+}

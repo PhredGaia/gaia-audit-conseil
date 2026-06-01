@@ -1,0 +1,180 @@
+.offres-process {
+	padding: $spacing-5xl 0;
+	background: linear-gradient(to right, $black-primary, $navy);
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image:
+			linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+		background-size: 40px 40px;
+		pointer-events: none;
+	}
+
+	.container {
+		position: relative;
+		z-index: 1;
+	}
+
+	&__header {
+		text-align: center;
+		margin-bottom: $spacing-5xl;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: $spacing-md;
+	}
+
+	&__title {
+		font-family: $font-family-primary;
+		font-size: $h2-size-desktop;
+		font-weight: $font-weight-bold;
+		color: $white;
+		line-height: $line-height-tight;
+		margin: 0;
+	}
+
+	&__subtitle {
+		color: rgba($white, 0.75);
+		max-width: 560px;
+		margin: 0;
+	}
+
+	/* ── Steps grid ── */
+
+	&__steps {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: $spacing-lg;
+	}
+
+	&__step {
+		position: relative;
+	}
+
+	/* Connector between steps */
+	&__connector {
+		display: none;
+		position: absolute;
+		top: 36px;
+		left: calc(60% + 4px);
+		width: calc(40% + #{$spacing-lg} - 4px);
+		height: 1px;
+		background: rgba($accent-green, 0.3);
+
+		@media (min-width: #{$breakpoint-md + 1px}) {
+			display: block;
+		}
+	}
+
+	&__step-card {
+		background: rgba($white, 0.05);
+		border: 1px solid rgba($white, 0.1);
+		border-radius: 12px;
+		padding: $spacing-xl;
+		display: flex;
+		flex-direction: column;
+		gap: $spacing-md;
+		transition: background 0.2s ease;
+
+		&:hover {
+			background: rgba($white, 0.08);
+		}
+	}
+
+	&__step-top {
+		display: flex;
+		align-items: center;
+		gap: $spacing-md;
+	}
+
+	&__step-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 44px;
+		height: 44px;
+		background: $accent-green;
+		border-radius: 10px;
+		color: $white;
+		flex-shrink: 0;
+	}
+
+	&__step-number {
+		font-family: $font-family-primary;
+		font-size: clamp(28px, 3vw, 36px);
+		font-weight: $font-weight-bold;
+		color: rgba($accent-green, 0.25);
+		line-height: 1;
+	}
+
+	&__step-title {
+		font-family: $font-family-primary;
+		font-size: $h3-size-desktop;
+		font-weight: $font-weight-semibold;
+		color: $white;
+		line-height: $line-height-tight;
+		margin: 0;
+	}
+
+	&__step-description {
+		font-family: $font-family-primary;
+		font-size: $body-size-desktop;
+		color: rgba($white, 0.7);
+		line-height: $line-height-relaxed;
+		margin: 0;
+	}
+
+	/* ── Responsive ── */
+
+	@media (max-width: $breakpoint-lg) {
+		padding: $spacing-4xl 0;
+
+		&__title {
+			font-size: $h2-size-lg;
+		}
+
+		&__step-title {
+			font-size: $h3-size-lg;
+		}
+	}
+
+	@media (max-width: $breakpoint-md) {
+		&__steps {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		&__title {
+			font-size: $h2-size-md;
+		}
+
+		&__header {
+			margin-bottom: $spacing-4xl;
+		}
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		padding: $spacing-3xl 0;
+
+		&__steps {
+			grid-template-columns: 1fr;
+			gap: $spacing-md;
+		}
+
+		&__header {
+			margin-bottom: $spacing-3xl;
+		}
+
+		&__title {
+			font-size: $h2-size-sm;
+		}
+
+		&__step-card {
+			padding: $spacing-lg;
+		}
+	}
+}

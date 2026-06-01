@@ -1,1 +1,63 @@
-// Styles hero mutualisés dans shared/components/Hero/style.scss
+.offres-hero {
+	.hero__text-column--full {
+		text-align: center;
+		align-items: center;
+		margin: 0 auto;
+	}
+}
+
+.offres-hero__subtitle {
+	color: rgba($white, 0.8);
+	max-width: 600px;
+	margin-bottom: $spacing-2xl;
+}
+
+.offres-hero__nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: $spacing-md;
+}
+
+.offres-hero__nav-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: $spacing-sm;
+	padding: $spacing-sm $spacing-lg;
+	background: rgba($white, 0.1);
+	border: 1px solid rgba($white, 0.2);
+	border-radius: 9999px;
+	color: rgba($white, 0.9);
+	font-family: $font-family-primary;
+	font-size: $small-size-desktop;
+	font-weight: $font-weight-medium;
+	text-decoration: none;
+	transition: background 0.2s ease, border-color 0.2s ease;
+
+	&:hover {
+		background: rgba($white, 0.18);
+		border-color: rgba($white, 0.4);
+		color: $white;
+	}
+}
+
+.offres-hero__nav-icon {
+	display: flex;
+	align-items: center;
+	color: $accent-green;
+}
+
+@media (max-width: $breakpoint-sm) {
+	.offres-hero__nav {
+		gap: $spacing-sm;
+	}
+
+	.offres-hero__nav-pill {
+		padding: $spacing-xs $spacing-md;
+		font-size: $small-size-sm;
+	}
+
+	.offres-hero__subtitle {
+		margin-bottom: $spacing-xl;
+	}
+}

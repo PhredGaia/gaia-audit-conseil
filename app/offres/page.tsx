@@ -7,27 +7,38 @@ import Offres from '@features/offres';
 const queryOffres = `
 	*[_type == "offres"][0]{
 		seo,
-		sections[]{
+		hero {
 			title,
+			subtitle
+		},
+		offerCards[] {
+			title,
+			subtitle,
 			description,
-			items[]{
-				title,
-				list
-			},
-			ctaBox{
-				text,
-				buttonLabel,
-				buttonHref
-			}
+			services,
+			benefits,
+			image,
+			seoInfo
+		},
+		process {
+			title,
+			subtitle
+		},
+		cta {
+			title,
+			text,
+			buttonLabel,
+			buttonHref,
+			phoneNumber
 		}
 	}
 `;
 
-export const revalidate = 3600; // Cache 1 heure
+export const revalidate = 3600;
 
 export async function generateMetadata(): Promise<Metadata> {
 	const data = await client.fetch(queryOffres);
-	
+
 	if (!data?.seo) {
 		return generatePageMetadata({
 			title: 'Offres - GAIA',
@@ -59,7 +70,12 @@ export default async function OffresPage() {
 					}}
 				/>
 			)}
-			<Offres sections={data?.sections || []} />
+			<Offres
+				hero={data?.hero}
+				offerCards={data?.offerCards || []}
+				process={data?.process}
+				cta={data?.cta}
+			/>
 		</>
 	);
 }

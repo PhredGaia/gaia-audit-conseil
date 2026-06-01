@@ -13,18 +13,14 @@ export default {
 					title: 'Titre SEO',
 					type: 'string',
 					validation: (Rule: any) =>
-						Rule.max(60).warning(
-							'Le titre doit faire moins de 60 caractères'
-						)
+						Rule.max(60).warning('Le titre doit faire moins de 60 caractères')
 				},
 				{
 					name: 'metaDescription',
 					title: 'Description SEO',
 					type: 'text',
 					validation: (Rule: any) =>
-						Rule.max(160).warning(
-							'La description doit faire moins de 160 caractères'
-						)
+						Rule.max(160).warning('La description doit faire moins de 160 caractères')
 				},
 				{
 					name: 'openGraphImage',
@@ -38,7 +34,7 @@ export default {
 			name: 'formations',
 			title: 'Formations',
 			type: 'array',
-			description: 'Liste des formations proposées',
+			description: 'Liste des formations proposées dans le catalogue',
 			of: [
 				{
 					type: 'object',
@@ -49,37 +45,45 @@ export default {
 							name: 'title',
 							title: 'Titre de la formation',
 							type: 'string',
-							description: 'Ex: "Systèmes de management et référentiels ISO"',
+							description: 'Ex : "Systèmes de management et référentiels ISO"',
 							validation: (Rule: any) => Rule.required()
 						},
 						{
 							name: 'duree',
 							title: 'Durée',
 							type: 'string',
-							description: 'Ex: "2 jours" ou "14 heures"'
+							description: 'Ex : "1 à 2 jours" ou "14 heures"'
 						},
 						{
 							name: 'descriptifApprentissage',
-							title: 'Descriptif de l\'apprentissage',
+							title: 'Description',
 							type: 'text',
-							description: 'Description de ce que les participants vont apprendre'
+							description: 'Présentation courte de la formation'
 						},
 						{
 							name: 'methodologie',
-							title: 'Méthodologie',
+							title: 'Méthodologie (bouton i)',
 							type: 'text',
-							description: 'Description de la méthode pédagogique utilisée'
+							description: 'Texte affiché dans le popup "i" à côté du titre. Ex : approche pédagogique, déroulé de la formation.'
+						},
+						{
+							name: 'image',
+							title: 'Illustration',
+							type: 'image',
+							description: 'Image affichée quand l\'accordion est ouvert (optionnelle)',
+							options: { hotspot: true }
 						}
 					],
 					preview: {
 						select: {
 							title: 'title',
-							duree: 'duree'
+							subtitle: 'duree',
+							media: 'image'
 						},
-						prepare({ title, duree }: any) {
+						prepare({ title, subtitle }: any) {
 							return {
 								title: title || 'Sans titre',
-								subtitle: duree || 'Durée non spécifiée'
+								subtitle: subtitle || 'Durée non spécifiée'
 							};
 						}
 					}
@@ -91,6 +95,12 @@ export default {
 		select: {
 			title: 'seo.metaTitle',
 			subtitle: 'seo.metaDescription'
+		},
+		prepare({ title, subtitle }: any) {
+			return {
+				title: title || 'Page Formations',
+				subtitle: subtitle || ''
+			};
 		}
 	}
 };

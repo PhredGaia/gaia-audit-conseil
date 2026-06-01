@@ -1,0 +1,135 @@
+.formations-modalites {
+	padding: $spacing-5xl 0;
+	background: linear-gradient(to right, $black-primary, $navy);
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image:
+			linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+		background-size: 40px 40px;
+		pointer-events: none;
+	}
+
+	.container {
+		position: relative;
+		z-index: 1;
+	}
+
+	&__inner {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: $spacing-5xl;
+		align-items: center;
+	}
+
+	/* ── Text column ── */
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		gap: $spacing-xl;
+	}
+
+	&__title {
+		font-family: $font-family-primary;
+		font-size: $h2-size-desktop;
+		font-weight: $font-weight-bold;
+		color: $white;
+		line-height: $line-height-tight;
+		margin: 0;
+	}
+
+	&__description {
+		color: rgba($white, 0.75);
+		margin: 0;
+		line-height: $line-height-relaxed;
+	}
+
+	/* ── Cards 2×2 grid ── */
+
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: $spacing-md;
+	}
+
+	&__card {
+		background: rgba($white, 0.07);
+		border: 1px solid rgba($white, 0.1);
+		border-radius: 12px;
+		padding: $spacing-xl;
+		display: flex;
+		flex-direction: column;
+		gap: $spacing-sm;
+	}
+
+	&__card-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		background: rgba($accent-green, 0.1);
+		border-radius: 8px;
+		color: $accent-green;
+		flex-shrink: 0;
+	}
+
+	&__card-title {
+		font-family: $font-family-primary;
+		font-size: $body-size-desktop;
+		font-weight: $font-weight-semibold;
+		color: $white;
+		margin: 0;
+	}
+
+	&__card-description {
+		font-family: $font-family-primary;
+		font-size: $small-size-desktop;
+		color: rgba($white, 0.65);
+		line-height: $line-height-relaxed;
+		margin: 0;
+	}
+
+	/* ── Responsive ── */
+
+	@media (max-width: $breakpoint-lg) {
+		padding: $spacing-4xl 0;
+
+		&__inner {
+			gap: $spacing-4xl;
+		}
+
+		&__title {
+			font-size: $h2-size-lg;
+		}
+	}
+
+	@media (max-width: $breakpoint-md) {
+		&__inner {
+			grid-template-columns: 1fr;
+			gap: $spacing-3xl;
+		}
+
+		&__title {
+			font-size: $h2-size-md;
+		}
+	}
+
+	@media (max-width: $breakpoint-sm) {
+		padding: $spacing-3xl 0;
+
+		&__title {
+			font-size: $h2-size-sm;
+		}
+
+		&__cards {
+			grid-template-columns: 1fr;
+		}
+	}
+}

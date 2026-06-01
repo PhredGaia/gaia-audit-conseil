@@ -11,7 +11,8 @@ const queryFormations = `
 			title,
 			duree,
 			descriptifApprentissage,
-			methodologie
+			methodologie,
+			image
 		}
 	}
 `;

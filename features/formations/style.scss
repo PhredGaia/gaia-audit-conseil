@@ -1,42 +1,32 @@
 .formations {
 	background-color: $white;
 
-	.formations-hero-wrapper {
+	&__hero-wrapper {
 		position: relative;
-
-		&__image-wrapper {
-			position: absolute !important;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			bottom: -50px;
-			right: -20px;
-			width: 260px;
-			height: auto;
-			overflow: hidden;
-			opacity: 0.96;
-		}
-
-		&__image {
-			position: relative !important;
-			display: block;
-			height: auto !important;
-			transform: scaleX(-1);
-			margin: 0 auto;
-		}
 	}
 
-	@media (max-width: 768px) {
-		.formations-hero-wrapper {
-			&__image-wrapper {
-				left: 100%;
-				transform: translateX(-90%);
-				bottom: -54px;
-			}
+	&__bonhomme-wrapper {
+		position: absolute !important;
+		bottom: -50px;
+		right: -20px;
+		width: 260px;
+		height: 260px;
+		pointer-events: none;
+		opacity: 0.96;
+	}
 
-			&__image {
-				width: 100% !important;
-			}
+	&__bonhomme {
+		position: relative !important;
+		display: block;
+		height: auto !important;
+		object-fit: contain;
+		object-position: bottom;
+		transform: scaleX(-1);
+	}
+
+	@media (max-width: $breakpoint-md) {
+		&__bonhomme-wrapper {
+			display: none;
 		}
 	}
 }
