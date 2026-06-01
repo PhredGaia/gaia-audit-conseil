@@ -39,7 +39,8 @@
 		align-items: center;
 	}
 
-	&__phone {
+	&__phone,
+	&__email {
 		display: inline-flex;
 		align-items: center;
 		gap: $spacing-sm;
@@ -97,7 +98,8 @@
 			width: 100%;
 
 			.button-primary,
-			.offres-cta__phone {
+			.offres-cta__phone,
+			.offres-cta__email {
 				width: 100%;
 				justify-content: center;
 			}
