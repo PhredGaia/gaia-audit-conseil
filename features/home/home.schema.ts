@@ -43,19 +43,22 @@ export default {
 					name: 'title',
 					title: 'Titre principal',
 					type: 'string',
-					initialValue: 'Construire des systèmes de management utiles, cohérents et réellement applicables au quotidien.'
+					initialValue:
+						'Construire des systèmes de management utiles, cohérents et réellement applicables au quotidien.'
 				},
 				{
 					name: 'tagline',
 					title: 'Sous-titre',
 					type: 'string',
-					initialValue: 'Audit, conseil, accompagnement et formation en ISO, RSE, EPV et systèmes de management intégrés.'
+					initialValue:
+						'Audit, conseil, accompagnement et formation en ISO, RSE, EPV et systèmes de management intégrés.'
 				},
 				{
 					name: 'description',
 					title: 'Description',
 					type: 'text',
-					initialValue: 'GAIA accompagne les organisations dans la structuration, l\'amélioration et le pilotage de systèmes de management adaptés à leurs réalités opérationnelles.'
+					initialValue:
+						"GAIA accompagne les organisations dans la structuration, l'amélioration et le pilotage de systèmes de management adaptés à leurs réalités opérationnelles."
 				},
 				{
 					name: 'buttonOffersLabel',
@@ -79,26 +82,28 @@ export default {
 		},
 		{
 			name: 'targetAudience',
-			title: 'À qui s\'adresse GAIA',
+			title: "À qui s'adresse GAIA",
 			type: 'object',
 			fields: [
 				{
 					name: 'title',
 					title: 'Titre',
 					type: 'string',
-					initialValue: 'À qui s\'adresse GAIA?'
+					initialValue: "À qui s'adresse GAIA?"
 				},
 				{
 					name: 'description',
 					title: 'Description (une ligne par puce)',
 					type: 'text',
-					initialValue: 'les TPE, PME et ETI.\nles dirigeants et responsables QSE / RSE.\nles organisations engagées ou en projet de certification ou de labellisation.'
+					initialValue:
+						'les TPE, PME et ETI.\nles dirigeants et responsables QSE / RSE.\nles organisations engagées ou en projet de certification ou de labellisation.'
 				},
 				{
 					name: 'objectives',
 					title: 'Objectifs',
 					type: 'text',
-					initialValue: 'L\'objectif est de structurer des démarches claires, efficaces et compréhensibles, sans sur-documentation ni complexité inutile.'
+					initialValue:
+						"L'objectif est de structurer des démarches claires, efficaces et compréhensibles, sans sur-documentation ni complexité inutile."
 				}
 			]
 		},
@@ -117,7 +122,8 @@ export default {
 					name: 'subtitle',
 					title: 'Sous-titre',
 					type: 'string',
-					initialValue: 'Du référentiel au terrain. Du terrain au système.'
+					initialValue:
+						'Concilier conformité, efficacité et pragmatisme.'
 				},
 				{
 					name: 'items',
@@ -125,8 +131,8 @@ export default {
 					type: 'array',
 					initialValue: [
 						{ text: 'Une compréhension fine des exigences' },
-						{ text: 'Une expérience réelle de l\'audit' },
-						{ text: 'Une expérience réelle de l\'audit' },
+						{ text: "Une expérience réelle de l'audit" },
+						{ text: "Une expérience réelle de l'audit" },
 						{ text: 'Une adaptation aux pratiques existantes' }
 					],
 					of: [
@@ -138,7 +144,8 @@ export default {
 									name: 'icon',
 									title: 'Icône',
 									type: 'string',
-									description: 'Nom de l\'icône (sera géré plus tard)'
+									description:
+										"Nom de l'icône (sera géré plus tard)"
 								},
 								{
 									name: 'text',
@@ -153,13 +160,14 @@ export default {
 					name: 'highlight',
 					title: 'Texte mis en avant',
 					type: 'text',
-					initialValue: 'Un système de management doit être compris, appliqué et porté par les équipes pour être réellement efficace.'
+					initialValue:
+						'Un système de management doit être compris, appliqué et porté par les équipes pour être réellement efficace.'
 				}
 			]
 		},
 		{
 			name: 'domains',
-			title: 'Domaines d\'intervention',
+			title: "Domaines d'intervention",
 			type: 'array',
 			initialValue: [
 				{ title: 'Qualité' },
@@ -167,7 +175,7 @@ export default {
 				{ title: 'Santé et sécurité au travail' },
 				{ title: 'Responsabilité sociétale' },
 				{ title: 'Événementiel responsable' },
-				{ title: 'Métiers d\'art et savoir-faire (EPV)' }
+				{ title: "Métiers d'art et savoir-faire (EPV)" }
 			],
 			of: [
 				{
@@ -208,7 +216,8 @@ export default {
 					name: 'description',
 					title: 'Description',
 					type: 'text',
-					initialValue: 'Contactez GAIA pour échanger sur vos enjeux et définir un accompagnement adapté.'
+					initialValue:
+						'Contactez GAIA pour échanger sur vos enjeux et définir un accompagnement adapté.'
 				},
 				{
 					name: 'buttonLabel',
