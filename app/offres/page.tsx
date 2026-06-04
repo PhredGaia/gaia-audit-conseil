@@ -34,7 +34,7 @@ const queryOffres = `
 	}
 `;
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 export async function generateMetadata(): Promise<Metadata> {
 	const data = await client.fetch(queryOffres);

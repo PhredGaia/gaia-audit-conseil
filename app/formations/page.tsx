@@ -17,7 +17,7 @@ const queryFormations = `
 	}
 `;
 
-export const revalidate = 3600; // Cache 1 heure
+export const revalidate = 60;
 
 export async function generateMetadata(): Promise<Metadata> {
 	const data = await client.fetch(queryFormations);
