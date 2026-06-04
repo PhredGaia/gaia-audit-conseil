@@ -4,7 +4,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: $spacing-lg;
-	max-width: 640px;
+	width: 100%;
 
 	&__field {
 		display: flex;
@@ -33,8 +33,51 @@
 		color: $error;
 	}
 
+	// ─── Pills objet ─────────────────────────────────────────
+	&__pills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: $spacing-sm;
+	}
+
+	&__pill {
+		display: inline-flex;
+		align-items: center;
+		gap: $spacing-xs;
+		padding: 8px $spacing-lg;
+		border: 1.5px solid rgba($black-primary, 0.15);
+		border-radius: 9999px;
+		background: $white;
+		font-family: $font-family-primary;
+		font-size: $body-size-sm;
+		font-weight: $font-weight-medium;
+		color: $black-secondary;
+		cursor: pointer;
+		transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+
+		svg {
+			color: $black-tertiary;
+			transition: color 0.15s ease;
+		}
+
+		&:hover {
+			border-color: $accent-green;
+			color: $black-primary;
+
+			svg { color: $accent-green; }
+		}
+
+		&--active {
+			border-color: $accent-green;
+			background: rgba($accent-green, 0.08);
+			color: $black-primary;
+
+			svg { color: $accent-green; }
+		}
+	}
+
+	// ─── Inputs ──────────────────────────────────────────────
 	&__input,
-	&__select,
 	&__textarea {
 		width: 100%;
 		padding: $spacing-md $spacing-lg;
@@ -42,8 +85,8 @@
 		font-size: $body-size-desktop;
 		color: $black-primary;
 		background: $white;
-		border: 1px solid $black-tertiary;
-		border-radius: 8px;
+		border: 1.5px solid rgba($black-primary, 0.12);
+		border-radius: 10px;
 		transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
 		&::placeholder {
@@ -53,7 +96,7 @@
 		&:focus {
 			outline: none;
 			border-color: $accent-green;
-			box-shadow: 0 0 0 2px rgba(118, 216, 198, 0.25);
+			box-shadow: 0 0 0 3px rgba($accent-green, 0.12);
 		}
 
 		&[aria-invalid='true'] {
@@ -61,19 +104,9 @@
 		}
 	}
 
-	&__select {
-		cursor: pointer;
-		appearance: none;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6L8 10L12 6' stroke='%231e1f22' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-		background-repeat: no-repeat;
-		background-position: right $spacing-lg center;
-		background-size: 16px;
-		padding-right: $spacing-3xl;
-	}
-
 	&__textarea {
 		resize: vertical;
-		min-height: 120px;
+		min-height: 140px;
 	}
 
 	&__error {
@@ -81,24 +114,65 @@
 		color: $error;
 	}
 
+	// ─── Submit ──────────────────────────────────────────────
 	&__submit {
-		width: 100%;
-		align-self: flex-start;
+		display: inline-flex;
+		align-items: center;
+		gap: $spacing-sm;
 		margin-top: $spacing-sm;
+		align-self: flex-start;
+		width: auto;
 	}
 
+	&__spinner {
+		width: 16px;
+		height: 16px;
+		border: 2px solid rgba($white, 0.35);
+		border-top-color: $white;
+		border-radius: 50%;
+		animation: cf-spin 0.7s linear infinite;
+	}
+
+	@keyframes cf-spin {
+		to { transform: rotate(360deg); }
+	}
+
+	// ─── Succès ──────────────────────────────────────────────
 	&__success {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: $spacing-md;
 		padding: $spacing-3xl;
+		background: rgba($accent-green, 0.06);
+		border: 1.5px solid rgba($accent-green, 0.3);
+		border-radius: 16px;
+		max-width: 520px;
+	}
+
+	&__success-icon {
+		width: 52px;
+		height: 52px;
 		background: rgba($accent-green, 0.12);
-		border: 1px solid rgba($accent-green, 0.4);
-		border-radius: 8px;
-		max-width: 640px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $accent-green;
+	}
+
+	&__success-title {
+		font-family: $font-family-primary;
+		font-size: $h3-size-desktop;
+		font-weight: $font-weight-bold;
+		color: $black-primary;
+		margin: 0;
 	}
 
 	&__success-text {
-		font-family: $font-family-primary;
 		font-size: $body-size-desktop;
-		color: $black-primary;
+		color: $black-secondary;
 		margin: 0;
+		line-height: $line-height-relaxed;
 	}
 }
