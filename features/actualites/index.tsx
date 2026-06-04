@@ -19,6 +19,10 @@ export default function Actualites({ articles }: ActualitesProps) {
 		<div>
 			<Hero>
 				<>
+					<div className="hero__badge">
+						<span className="hero__badge-dot" />
+						<span>Actualités</span>
+					</div>
 					<h1 className="hero__title">Actualités</h1>
 					<p className="hero__description text-level-1">
 						Nouvelles normes, annonces, événements et articles de GAIA Audit & Conseil.

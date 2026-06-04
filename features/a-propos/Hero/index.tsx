@@ -5,6 +5,10 @@ export default function AProposHero() {
 	return (
 		<Hero>
 			<>
+				<div className="hero__badge">
+					<span className="hero__badge-dot" />
+					<span>Qui sommes-nous</span>
+				</div>
 				<h1 className="hero__title">
 					GAIA – Audit · Conseil · Formation
 				</h1>

@@ -36,7 +36,7 @@ export default function OffresHero({
 				<>
 					<div className="hero__badge">
 						<span className="hero__badge-dot" />
-						<span>Audit · Conseil · Formation</span>
+						<span>Offres</span>
 					</div>
 					<h1 className="hero__title">{title}</h1>
 					<p className="offres-hero__subtitle text-level-1">{subtitle}</p>

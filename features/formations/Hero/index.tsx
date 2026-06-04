@@ -42,13 +42,10 @@ export default function FormationsHero() {
 		<div className="formations-hero">
 			<Hero>
 				<>
-					<span className="formations-hero__badge">
-						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-							<path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-							<path d="M6 12v5c3 3 9 3 12 0v-5"/>
-						</svg>
-						Développez vos compétences
-					</span>
+					<div className="hero__badge">
+						<span className="hero__badge-dot" />
+						<span>Formations</span>
+					</div>
 					<h1 className="hero__title">Formations professionnelles</h1>
 					<p className="formations-hero__subtitle text-level-1">
 						Les formations GAIA permettent de comprendre, structurer et faire vivre
