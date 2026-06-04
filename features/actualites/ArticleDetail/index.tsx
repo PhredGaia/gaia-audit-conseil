@@ -23,7 +23,7 @@ const portableTextComponents = {
 						width={900}
 						height={540}
 						className="article-detail__content-image"
-						sizes="(max-width: 768px) 100vw, 860px"
+						sizes="(max-width: 768px) 100vw, 820px"
 					/>
 					{value.caption && (
 						<figcaption className="article-detail__caption">{value.caption}</figcaption>
@@ -61,36 +61,52 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
 		: '';
 
 	const categoryLabel = CATEGORY_LABELS[article.category] || article.category || '';
+	const hasCover = !!article.coverImage?.asset?._ref;
 
 	return (
 		<article className="article-detail">
 			<Hero>
 				<>
-					<span className={`article-detail__category article-detail__category--${article.category}`}>
-						{categoryLabel}
-					</span>
+					<div className="hero__badge">
+						<span className="hero__badge-dot" />
+						<span>{categoryLabel}</span>
+					</div>
 					<h1 className="hero__title">{article.title}</h1>
-					<time className="article-detail__date text-level-1">{date}</time>
+					<time className="article-detail__date">{date}</time>
 				</>
 			</Hero>
 
-			<div className="container">
-				<div className="article-detail__body">
-					{article.excerpt && (
-						<p className="article-detail__excerpt">{article.excerpt}</p>
-					)}
-					{article.content && article.content.length > 0 && (
-						<div className="article-detail__content">
-							<PortableText
-								value={article.content}
-								components={portableTextComponents}
+			<div className="article-detail__outer">
+				<div className="article-detail__card">
+					{hasCover && (
+						<div className="article-detail__cover">
+							<SanityImage
+								image={article.coverImage}
+								alt={article.title}
+								width={900}
+								height={506}
+								className="article-detail__cover-img"
+								sizes="(max-width: 768px) 100vw, 860px"
 							/>
 						</div>
 					)}
-					<div className="article-detail__back">
-						<Link href="/actualites" className="button-secondary">
-							← Retour aux actualités
-						</Link>
+					<div className={`article-detail__body${hasCover ? '' : ' article-detail__body--no-cover'}`}>
+						{article.excerpt && (
+							<p className="article-detail__excerpt">{article.excerpt}</p>
+						)}
+						{article.content && article.content.length > 0 && (
+							<div className="article-detail__content">
+								<PortableText
+									value={article.content}
+									components={portableTextComponents}
+								/>
+							</div>
+						)}
+						<div className="article-detail__back">
+							<Link href="/actualites" className="button-secondary">
+								← Retour aux actualités
+							</Link>
+						</div>
 					</div>
 				</div>
 			</div>
