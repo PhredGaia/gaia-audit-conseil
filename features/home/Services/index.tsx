@@ -31,7 +31,7 @@ const services = [
 		title: 'Formation',
 		description:
 			'Programmes de formation adaptés pour renforcer les compétences de vos équipes en management de la qualité.',
-		image: '/formation.jpg',
+		image: '/espace-formation.jpeg',
 		features: ['Formation ISO', 'Sensibilisation RSE', 'Ateliers pratiques'],
 		icon: (
 			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
